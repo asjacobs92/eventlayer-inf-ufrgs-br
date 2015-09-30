@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    	<title>UFRGS EventLayer</title>
+			<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+			<link rel="stylesheet" type="text/css" href="css/jasny-bootstrap.min.css" >
+
+			<link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>
+
+	<body onload="initialize();">
+		<div class="navmenu navmenu-inverse navmenu-fixed-left offcanvas-sm">
+      <a class="navmenu-brand visible-md visible-lg" href="#">UFRGS Event Layer</a>
+      <ul class="nav navmenu-nav">
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">menu</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Menu</a></li>
+				<li class="divider"></li>
+      </ul>
+      <ul class="nav navmenu-nav">
+        <li><a href="#">Filtro</a></li>
+        <li><a href="#">Filtro</a></li>
+        <li><a href="#">Filtro</a></li>
+				<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu navmenu-nav">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Nav header</li>
+            <li><a href="#">Separated link</a></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="navbar navbar-inverse navbar-fixed-top hidden-md hidden-lg">
+      <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+			<a class="navbar-brand" href="#">UFRGS Event Layer</a>
+    </div>
+
+
+    <div id="events-map" class="container"></div>
+
+		<script src="js/script.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jasny-bootstrap.min.js"></script>
+  </body>
+</html>

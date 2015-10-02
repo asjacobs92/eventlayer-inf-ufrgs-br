@@ -11,6 +11,11 @@ html, body {
   z-index: 0;
 }
 
+.logo {
+	max-width: 65px;
+	margin-top: -8px;
+}
+
 .navbar-right {
   margin-right: 100px;
 }
@@ -42,4 +47,8 @@ html, body {
   .canvas {
     padding: 0;
   }
+}
+
+.inp {
+	text-align:right !important;
 }

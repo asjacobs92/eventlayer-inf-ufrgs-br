@@ -3,10 +3,44 @@ html, body {
 	width: 100%;
   margin: 0px;
   padding: 0px;
+	overflow: hidden;
 }
 
 #events-map {
-  height: 100%;
+	float: left;
+	width: 75%;
+	padding-top: 50px;
+}
+
+#events-list {
+	float: right;
+	width: 25%;
+	height: 100%;
+	padding-top: 50px;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+
+#events-list-toggle-container {
+	float: right;
+	height: 100%;
+	width: 1%;
+	padding-top: 50px;
+	margin-left: -2%;
+	z-index: 1;
+}
+
+#events-list-toggle {
+	height: 100%;
+	width: 100%;
+}
+
+#login-form {
+  margin-right: 50px;
+}
+
+.canvas {
+	height: 100%;
 	width: 100%;
   z-index: 0;
 }
@@ -14,10 +48,6 @@ html, body {
 .logo {
 	max-width: 65px;
 	margin-top: -8px;
-}
-
-.navbar-right {
-  margin-right: 100px;
 }
 
 .navmenu {
@@ -47,6 +77,10 @@ html, body {
   .canvas {
     padding: 0;
   }
+}
+
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
 }
 
 .inp {

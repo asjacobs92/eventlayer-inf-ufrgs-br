@@ -4,7 +4,7 @@ var eventList =
 		"EventId":1,
 		"EventTitle":"Feira de Oportunidade da UFRGS",
 		"EventType":"Palestra",
-		"EventImage":"resource/logo.png",
+		"EventImage":"resource/logo.jpg",
 		"TimeStart":"2014-02-05 15:25:23",
 		"TimeEnd":"2014-02-28 14:29:48",
 		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
@@ -15,7 +15,7 @@ var eventList =
 		"EventId":2,
 		"EventTitle":"Workshop de WebServices",
 		"EventType":"Workshop",
-		"EventImage":"resource/logo2.gif",
+		"EventImage":"resource/logo2.jpg",
 		"TimeStart":"2014-02-05 00:00:00",
 		"TimeEnd":"2014-02-17 00:00:00",
 		"Description":"Workshop sobre diferentes tipos de WebServices.",
@@ -26,7 +26,7 @@ var eventList =
 		"EventId":3,
 		"EventTitle":"Feira de Oportunidade da UFRGS",
 		"EventType":"Palestra",
-		"EventImage":"resource/logo.png",
+		"EventImage":"resource/logo.jpg",
 		"TimeStart":"2014-02-05 15:25:23",
 		"TimeEnd":"2014-02-28 14:29:48",
 		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
@@ -37,7 +37,7 @@ var eventList =
 		"EventId":4,
 		"EventTitle":"Workshop de WebServices",
 		"EventType":"Workshop",
-		"EventImage":"resource/logo2.gif",
+		"EventImage":"resource/logo2.jpg",
 		"TimeStart":"2014-02-05 00:00:00",
 		"TimeEnd":"2014-02-17 00:00:00",
 		"Description":"Workshop sobre diferentes tipos de WebServices.",
@@ -48,7 +48,7 @@ var eventList =
 		"EventId":5,
 		"EventTitle":"Feira de Oportunidade da UFRGS",
 		"EventType":"Palestra",
-		"EventImage":"resource/logo.png",
+		"EventImage":"resource/logo.jpg",
 		"TimeStart":"2014-02-05 15:25:23",
 		"TimeEnd":"2014-02-28 14:29:48",
 		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
@@ -59,7 +59,7 @@ var eventList =
 		"EventId":6,
 		"EventTitle":"Workshop de WebServices",
 		"EventType":"Workshop",
-		"EventImage":"resource/logo2.gif",
+		"EventImage":"resource/logo2.jpg",
 		"TimeStart":"2014-02-05 00:00:00",
 		"TimeEnd":"2014-02-17 00:00:00",
 		"Description":"Workshop sobre diferentes tipos de WebServices.",
@@ -70,7 +70,7 @@ var eventList =
 		"EventId":7,
 		"EventTitle":"Feira de Oportunidade da UFRGS",
 		"EventType":"Palestra",
-		"EventImage":"resource/logo.png",
+		"EventImage":"resource/logo.jpg",
 		"TimeStart":"2014-02-05 15:25:23",
 		"TimeEnd":"2014-02-28 14:29:48",
 		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
@@ -81,7 +81,7 @@ var eventList =
 		"EventId":8,
 		"EventTitle":"Workshop de WebServices",
 		"EventType":"Workshop",
-		"EventImage":"resource/logo2.gif",
+		"EventImage":"resource/logo2.jpg",
 		"TimeStart":"2014-02-05 00:00:00",
 		"TimeEnd":"2014-02-17 00:00:00",
 		"Description":"Workshop sobre diferentes tipos de WebServices.",
@@ -92,7 +92,7 @@ var eventList =
 		"EventId":9,
 		"EventTitle":"Feira de Oportunidade da UFRGS",
 		"EventType":"Palestra",
-		"EventImage":"resource/logo.png",
+		"EventImage":"resource/logo.jpg",
 		"TimeStart":"2014-02-05 15:25:23",
 		"TimeEnd":"2014-02-28 14:29:48",
 		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
@@ -103,7 +103,7 @@ var eventList =
 		"EventId":10,
 		"EventTitle":"Workshop de WebServices",
 		"EventType":"Workshop",
-		"EventImage":"resource/logo2.gif",
+		"EventImage":"resource/logo2.jpg",
 		"TimeStart":"2014-02-05 00:00:00",
 		"TimeEnd":"2014-02-17 00:00:00",
 		"Description":"Workshop sobre diferentes tipos de WebServices.",
@@ -114,7 +114,7 @@ var eventList =
 		"EventId":11,
 		"EventTitle":"Feira de Oportunidade da UFRGS",
 		"EventType":"Palestra",
-		"EventImage":"resource/logo.png",
+		"EventImage":"resource/logo.jpg",
 		"TimeStart":"2014-02-05 15:25:23",
 		"TimeEnd":"2014-02-28 14:29:48",
 		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
@@ -125,7 +125,7 @@ var eventList =
 		"EventId":12,
 		"EventTitle":"Workshop de WebServices",
 		"EventType":"Workshop",
-		"EventImage":"resource/logo2.gif",
+		"EventImage":"resource/logo2.jpg",
 		"TimeStart":"2014-02-05 00:00:00",
 		"TimeEnd":"2014-02-17 00:00:00",
 		"Description":"Workshop sobre diferentes tipos de WebServices.",
@@ -136,7 +136,7 @@ var eventList =
 		"EventId":13,
 		"EventTitle":"Feira de Oportunidade da UFRGS",
 		"EventType":"Palestra",
-		"EventImage":"resource/logo.png",
+		"EventImage":"resource/logo.jpg",
 		"TimeStart":"2014-02-05 15:25:23",
 		"TimeEnd":"2014-02-28 14:29:48",
 		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
@@ -147,7 +147,7 @@ var eventList =
 		"EventId":14,
 		"EventTitle":"Workshop de WebServices",
 		"EventType":"Workshop",
-		"EventImage":"resource/logo2.gif",
+		"EventImage":"resource/logo2.jpg",
 		"TimeStart":"2014-02-05 00:00:00",
 		"TimeEnd":"2014-02-17 00:00:00",
 		"Description":"Workshop sobre diferentes tipos de WebServices.",
@@ -158,7 +158,7 @@ var eventList =
 		"EventId":15,
 		"EventTitle":"Feira de Oportunidade da UFRGS",
 		"EventType":"Palestra",
-		"EventImage":"resource/logo.png",
+		"EventImage":"resource/logo.jpg",
 		"TimeStart":"2014-02-05 15:25:23",
 		"TimeEnd":"2014-02-28 14:29:48",
 		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
@@ -169,7 +169,7 @@ var eventList =
 		"EventId":16,
 		"EventTitle":"Workshop de WebServices",
 		"EventType":"Workshop",
-		"EventImage":"resource/logo2.gif",
+		"EventImage":"resource/logo2.jpg",
 		"TimeStart":"2014-02-05 00:00:00",
 		"TimeEnd":"2014-02-17 00:00:00",
 		"Description":"Workshop sobre diferentes tipos de WebServices.",
@@ -209,29 +209,26 @@ function initializeEvents() {
 		var eventInfo =
 			"<form action='index.php' method='post'>" +
 				"<input type='text' value='" + eventList[i].EventId +"' hidden name='eventId'/>" +
-				"<div class='table-responsive'>" +
-					"<table id='eventPopup' class='table borderless'>" +
-						"<tr>" +
-							"<th style='text-align:center;' colspan='4'> <strong>" + eventList[i].EventTitle + "</strong> </th>" +
-							"<td colspan='2' style='text-align:right;'>" + eventList[i].EventType + "</td>" +
-						"</tr>" +
-						"<tr>" +
-							"<td class='inp' colspan='1' style='text-align:right;'> Início em </td>" +
-							"<td class='inp' colspan='3' style='text-align:center;'> <strong>" + startDate + "</strong> às <strong>"+ startTime + "</strong> </td>" +
-							"<td colspan='1' rowspan='3'> <img id='event"+ i +"' border='solid 1px' src='"+ eventList[i].EventImage +"' height='100px' style='padding-left:15px'> </td>" +
-						"</tr>" +
-						"<tr>" +
-							"<td class='inp' colspan='1'> até </td><td class='inp' colspan='3' style='text-align:center;'> <strong>" + endDate + "</strong> às <strong>" + endTime + "</strong></td>" +
-						"</tr>" +
-						"<tr>" +
-							"<td class='inp' colspan='1'> <strong> Descrição </strong> </td> <td colspan='3' style='max-width:200px; padding-left:10px'>" + eventList[i].Description + "</td>" +
-						"</tr>"+
-					"</table>" +
-				"</div>" +
-			"</form>";
-
-		$('#events-list').append(("<li href='#' class='list-group-item' style='padding:1%;'>" + eventInfo + "</li>"));	//events on list
-		$('#event' + i).css({ height: '100px' });
+				"<div class='event-card-wide mdl-card mdl-shadow--2dp mdl-js-ripple-effect'>" + 
+			      	"<div class='mdl-card__title' style='background: url("+ eventList[i].EventImage +") left top / cover'>" + 
+			      		"<h2 class='mdl-card__title-text'>" + eventList[i].EventTitle + "</h2>" + 
+			      	"</div>" +
+			      	"<div class='mdl-card__supporting-text'>" + 
+			      		"<table id='eventPopup'>" +
+				      		"<tr>" +
+								"<td class='inp' colspan='0'>Início em </td>" +
+								"<td class='inp' colspan='2'> <strong>" + startDate + "</strong> às <strong>"+ startTime + "</strong> </td>" +
+								"<td class='inp' colspan='3'>" + eventList[i].EventType + "</td>" +
+							"</tr>" +
+							"<tr>" +
+								"<td class='inp' colspan='0'> até </td><td class='inp' colspan='2' style='text-align:center;'> <strong>" + endDate + "</strong> às <strong>" + endTime + "</strong></td>" +
+							"</tr>" +
+						"</table>" +
+						eventList[i].Description + 
+			      	"</div>" +
+			    "</div>" +
+		    "</form>";
+		$('#events-list').append(("<div class='mdl-cell mdl-cell--1-col clickable justified'> " + eventInfo + "</div>"));	//events on list
 
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(eventList[i].Latitude, eventList[i].Longitude),
@@ -251,5 +248,26 @@ function initializeEvents() {
 					infowindow.close();
 			}
 		}) (marker, eventInfo));
+
+		google.maps.event.addListener(infowindow, 'domready', function() {
+		    // Reference to the DIV that wraps the bottom of infowindow
+		    var infoWindowOuter = $('.gm-style-iw');
+		    var infoWindowBackground = infoWindowOuter.prev();
+		    // Removes background shadow DIV
+		    infoWindowBackground.children(':nth-child(2)').css({'display' : 'none'});
+		    // Removes white background DIV
+		    infoWindowBackground.children(':nth-child(4)').css({'display' : 'none'});
+
+		    infoWindowBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(178, 178, 178, 0.6) 0px 1px 6px', 'z-index' : '1'});
+
+		    // Reference to the div that groups the close button elements.
+		    var infoWindowCloseBtn = infoWindowOuter.next();
+		    // Apply the desired effect to the close button
+		    infoWindowCloseBtn.css({display: 'none'});
+		  });
 	}
 }
+
+function toggleList() {
+	$('#events-list').slideToggle();
+} 

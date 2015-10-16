@@ -2,73 +2,65 @@
 <html>
 	<head>
     	<title>UFRGS EventLayer</title>
-			<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-			<link rel="stylesheet" type="text/css" href="css/jasny-bootstrap.min.css" >
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/material.min.css">
+		<link rel="stylesheet"  type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
 
-			<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 
 	<body onload="initialize();">
-		<div class="navbar navbar-fixed-top navbar-inverse">
-			<div class="navbar-header">
-				<!-- Hamburger button -->
-				<button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#left-navmenu" data-canvas="#left-container">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
+		<div class="custom-header mdl-layout mdl-js-layout">
+		  	<header class="mdl-layout__header">
+			    <div class="mdl-layout__header-row">
+			      	<!-- Title -->
+			      	<span class="mdl-layout-title">
+			      		<img class="inf-logo-image" src="resource/inf.png"> EventLayer
+			      	</span>
+			      	<!-- Add spacer, to align navigation to the right -->
+			      	<div class="mdl-layout-spacer"></div>
 
-				<a class="navbar-brand" href="#"><img class="logo" src="resource/inf.png"/></a>
-				<span class="navbar-brand hidden-sm hidden-xs" style="margin-left:-15px;" href="#">Event Layer</span>
-			</div>
+			      	<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+				        <label class="mdl-button mdl-js-button mdl-button--icon" for="search-exp">
+				         	<i class="material-icons">search</i>
+				        </label>
+				        <div class="mdl-textfield__expandable-holder">
+				          <input class="mdl-textfield__input" type="text" name="sample" id="search-exp"/>
+				        </div>
+			      	</div>
 
-			<!-- Navbar -->
-			<div class="navbar-offcanvas offcanvas navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<!-- Login -->
-						<form id="login-form" class="navbar-form navbar-right" role="login">
-							<div class="form-group">
-									<input type="numerical" class="form-control" name="username" placeholder="Cartão">
-							</div>
-							<div class="form-group">
-									<input type="password" class="form-control" name="password" placeholder="Senha">
-							</div>
-							<button type="submit" class="btn btn-default">Entrar</button>
-						</form>
-					</li>
-	      </ul>
-			</div>
-		</div>
+			        <label class="mdl-button mdl-js-button mdl-button--icon" onclick="toggleList()">
+			         	<i class="material-icons">list</i>
+			        </label>
+			    </div>
+		  	</header>
 
-		<!-- Left side menu -->
-		<div id="left-container" class="container">
-			<div id="left-navmenu" class="navmenu navmenu-inverse navmenu-fixed-left offcanvas">
-	      <ul class="nav navmenu-nav">
-	        <li><a href="#">Menu</a></li>
-					<li class="divider"></li>
-	      </ul>
-	      <ul class="nav navmenu-nav">
-	        <li><a href="#">Filtros</a></li>
-					<li><a href="#">Filtros</a></li>
-					<li><a href="#">Filtros</a></li>
-					<li><a href="#">Filtros</a></li>
-					<li><a href="#">Filtros</a></li>
-	      </ul>
-	    </div>
-		</div>
+		  	<div class="mdl-layout__drawer">
+			    <span class="mdl-layout-title">
+		      		<img class="inf-logo-image" src="resource/inf.png"> EventLayer
+		      	</span>
+			    <nav class="mdl-navigation">
+		      		<a class="mdl-navigation__link" href="">Link</a>
+		      		<a class="mdl-navigation__link" href="">Link</a>
+		      		<a class="mdl-navigation__link" href="">Link</a>
+		      		<a class="mdl-navigation__link" href="">Link</a>
+			    </nav>
+  			</div>
 
-		<!-- Page content -->
-		<div class="canvas">
-			<div id="events-map" class="canvas"></div>
+		  	<main class="mdl-layout__content content">
+		  		<div id="events-map" class="content"></div>
 
-			<ul id="events-list" class="list-group"></ul>
-		</div>
+				<div id="events-list" class="mdl-grid"></div>
+		  	</main>
+	  	</div>
+		
 
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="js/jquery-1.11.3.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jasny-bootstrap.min.js"></script>
+		<script src="js/material.min.js"></script>
 
 		<script src="js/script.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js"></script>

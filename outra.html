@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    	<title>UFRGS EventLayer</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+
+		
+	</head>
+
+	<body>
+	<script src="js/jquery-1.11.3.min.js"></script>
+			<script language=JavaScript>
+         
+		  //alert("Teste");
+			$.getJSON("php/consulta.php", function(dados){
+			//alert(dados);
+			console.log("success");
+			alert("JSON Data: "+ dados[0].title);
+			
+		}	
+		)
+			//.done(function)
+		;
+          </script>
+	</body>
+</html>

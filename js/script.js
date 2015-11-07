@@ -1,4 +1,4 @@
-var eventList =
+/*var eventList =
 [
 	{
 		"EventId":1,
@@ -176,12 +176,28 @@ var eventList =
 		"Longitude":-51.120520,
 		"Latitude":-30.068685
 	}
-];
+];*/
+
+var eventList;
 
 var map;
+
 function initialize() {
 	initializeMap();
-	initializeEvents();
+	
+	/*$.getJSON("php/consulta.php", function(dados)
+	{
+		eventList = dados;
+		console.log(eventList);
+		console.log("success");
+		alert(eventList[0].title);		
+		
+	});*/
+	$.getJSON("php/consulta.php", initializeEvents);
+	
+	//initializeEvents();
+
+
 }
 
 function initializeMap() {
@@ -195,45 +211,46 @@ function initializeMap() {
 	map = new google.maps.Map(mapCanvas, mapOptions)
 }
 
-function initializeEvents() {
+function initializeEvents(eventList) {
+	
 	var infowindow = new google.maps.InfoWindow(), marker, i;
 	for (i = 0; i < eventList.length; i++) {
-		var start = eventList[i].TimeStart.split(" ");
+		var start = eventList[i].timeStart.split(" ");
 		var startDate = start[0];
 		var startTime = start[1];
 
-		var end = eventList[i].TimeEnd.split(" ");
+		var end = eventList[i].timeEnd.split(" ");
 		var endDate = end[0];
 		var endTime = end[1];
 
 		var eventInfo =
 			"<form action='index.php' method='post'>" +
-				"<input type='text' value='" + eventList[i].EventId +"' hidden name='eventId'/>" +
+				"<input type='text' value='" + eventList[i].eventId +"' hidden name='eventId'/>" +
 				"<div class='event-card-wide mdl-card mdl-shadow--2dp mdl-js-ripple-effect'>" + 
-			      	"<div class='mdl-card__title' style='background: url("+ eventList[i].EventImage +") left top / cover'>" + 
-			      		"<h2 class='mdl-card__title-text'>" + eventList[i].EventTitle + "</h2>" + 
+			      	"<div class='mdl-card__title' style='background: url("+ eventList[i].image +") left top / cover'>" + 
+			      		"<h2 class='mdl-card__title-text'>" + eventList[i].title + "</h2>" + 
 			      	"</div>" +
 			      	"<div class='mdl-card__supporting-text'>" + 
 			      		"<table id='eventPopup'>" +
 				      		"<tr>" +
 								"<td class='inp' colspan='0'>Início em </td>" +
 								"<td class='inp' colspan='2'> <strong>" + startDate + "</strong> às <strong>"+ startTime + "</strong> </td>" +
-								"<td class='inp' colspan='3'>" + eventList[i].EventType + "</td>" +
+								"<td class='inp' colspan='3'>" + eventList[i].type + "</td>" +
 							"</tr>" +
 							"<tr>" +
 								"<td class='inp' colspan='0'> até </td><td class='inp' colspan='2' style='text-align:center;'> <strong>" + endDate + "</strong> às <strong>" + endTime + "</strong></td>" +
 							"</tr>" +
 						"</table>" +
-						eventList[i].Description + 
+						eventList[i].description + 
 			      	"</div>" +
 			    "</div>" +
 		    "</form>";
 		$('#events-list').append(("<div class='mdl-cell mdl-cell--1-col clickable justified'> " + eventInfo + "</div>"));	//events on list
 
 		marker = new google.maps.Marker({
-			position: new google.maps.LatLng(eventList[i].Latitude, eventList[i].Longitude),
+			position: new google.maps.LatLng(eventList[i].latitude, eventList[i].longitude),
 			map: map,
-			title: eventList[i].EventTitle
+			title: eventList[i].title
 		});
 
 		google.maps.event.addListener(marker, 'mouseover', (function(marker, eventInfo) {		//markers on map

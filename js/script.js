@@ -241,7 +241,7 @@ function initializeEvents(eventList) {
 								"<td class='inp' colspan='0'> até </td><td class='inp' colspan='2' style='text-align:center;'> <strong>" + endDate + "</strong> às <strong>" + endTime + "</strong></td>" +
 							"</tr>" +
 						"</table>" +
-						eventList[i].description + 
+						eventList[i].description + eventList[i].placeName +
 			      	"</div>" +
 			    "</div>" +
 		    "</form>";

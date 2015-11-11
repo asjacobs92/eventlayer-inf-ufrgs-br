@@ -38,15 +38,52 @@
 			    </div>
 		  	</header>
 
-		  	<div class="mdl-layout__drawer">
+		  	<div class="mdl-layout__drawer mdl-color--grey-100">
 			    <span class="mdl-layout-title">
-		      		<img class="inf-logo-image" src="resource/inf.png"> EventLayer
-		      	</span>
-			    <nav class="mdl-navigation">
-		      		<a class="mdl-navigation__link" href="">Link</a>
-		      		<a class="mdl-navigation__link" href="">Link</a>
-		      		<a class="mdl-navigation__link" href="">Link</a>
-		      		<a class="mdl-navigation__link" href="">Link</a>
+		      		<img class="inf-logo-image" src="resource/inf.png"> Filtros
+		      	    </span>
+			    <!--nav class="mdl-navigation mdl-layout mdl-js-layout mdl-color--grey-100"-->
+				<nav class="mdl-navigation">
+
+						      		
+				
+					<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Palestra">
+					  <input type="checkbox" id="Palestra" class="mdl-checkbox__input">
+					  <span class="mdl-checkbox__label">Palestra</span>
+					</label>
+					<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Workshop">
+					  <input type="checkbox" id="Workshop" class="mdl-checkbox__input">
+					  <span class="mdl-checkbox__label">Workshop</span>
+					</label>
+
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					    <input class="mdl-textfield__input" type="text" id="txt"/>
+					    <label class="mdl-textfield__label" for="txt">Palavras-chave</label>
+					</div>
+
+					Data mínima					
+					<div class="mdl-textfield mdl-js-textfield">
+						<input type="date" id="ts">
+					</div>
+
+					Data máxima
+					<div class="mdl-textfield mdl-js-textfield">
+						<input type="date" id="te">
+					</div>
+
+					<button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" type="reset">Limpar</button>
+					<button class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect" 
+						onclick="consulta();">Buscar</button>
+					<!--button class="mdl-button mdl-button--fab mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="consulta();">
+						<i class="material-icons">send</i></button-->
+
+				
+
+					<!--a class="mdl-navigation__link" href="">Link</a>
+			      		<a class="mdl-navigation__link" href="">Link</a>
+			      		<a class="mdl-navigation__link" href="">Link</a>
+			      		<a class="mdl-navigation__link" href="">Link</a-->
+
 			    </nav>
   			</div>
 

@@ -181,22 +181,13 @@
 var eventList;
 
 var map;
+var markers = [];
+
+var page = "php/consulta.php";
 
 function initialize() {
 	initializeMap();
-	
-	/*$.getJSON("php/consulta.php", function(dados)
-	{
-		eventList = dados;
-		console.log(eventList);
-		console.log("success");
-		alert(eventList[0].title);		
-		
-	});*/
-	$.getJSON("php/consulta.php", initializeEvents);
-	
-	//initializeEvents();
-
+	$.getJSON(page, initializeEvents);
 
 }
 
@@ -282,9 +273,73 @@ function initializeEvents(eventList) {
 		    // Apply the desired effect to the close button
 		    infoWindowCloseBtn.css({display: 'none'});
 		  });
+
+		markers.push(marker);
 	}
 }
 
 function toggleList() {
 	$('#events-list').slideToggle();
-} 
+}
+function consulta() {
+	var and = 0;
+	page = "php/consulta.php";
+	if ($("#txt").val().length > 0){
+		var value = $("#txt").val();
+		page = page + "?txt=" + value;
+		and = 1;
+	}
+
+	if ($("#ts").val().length > 0){
+		if(and){
+			var value = $("#ts").val();
+			page = page + "&ts=" + value;
+		}
+		else{
+			var value = $("#ts").val();
+			page = page + "?ts=" + value;
+			and = 1;
+		}
+	}
+
+	if ($("#te").val().length > 0){
+		if(and){
+			var value = $("#te").val();
+			page = page + "&te=" + value;
+		}
+		else{
+			var value = $("#te").val();
+			page = page + "?te=" + value;
+			and = 1;
+		}
+	}
+
+	//alert(page);
+	
+	$('#events-list').empty();
+
+	eventList = null;
+	deleteMarkers();
+	//map = null;
+	$.getJSON(page, initializeEvents);
+	//initialize();
+}
+
+function deleteMarkers() {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers = [];
+}
+
+function clearMarkers() {
+  setMapOnAll(null);
+}
+
+function setMapOnAll(map) {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
+}
+
+

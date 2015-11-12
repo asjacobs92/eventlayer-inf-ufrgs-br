@@ -31,9 +31,18 @@ if(!empty($_GET)){
 
 
 	//Se a pesquisa é por tipo
-	if(isset($_GET['tp'])){
-		$sql .= " and (type='".$_GET['tp']."')";
-
+	if(isset($_GET['wo']) || isset($_GET['pa'])){
+		if(isset($_GET['wo']) && isset($_GET['pa'])){
+			$sql .= " and (type='Workshop' or type='Palestra')";
+		}
+		else{
+			if (isset($_GET['wo'])){
+				$sql .= " and (type='Workshop')";
+			}
+			else{
+				$sql .= " and (type='Palestra')";
+			}
+		}
 	}
 
 	//Se a pesquisa é por palavra-chave (busca no título e na descrição)

@@ -13,22 +13,23 @@
 	</head>
 
 	<body onload="initialize();">
-		<div class="custom-header mdl-layout mdl-js-layout">
+		<div class="custom-header mdl-layout mdl-js-layout mdl-layout--fixed-header">
 		  	<header class="mdl-layout__header">
 			    <div class="mdl-layout__header-row">
 			      	<!-- Title -->
-			      	<span class="mdl-layout-title">
-			      		<img class="inf-logo-image" src="resource/inf.png"> EventLayer
+				<span class="mdl-layout-title">
+			      		<a href=""><img class="inf-logo-image" src="resource/inf.png"></a>EventLayer
 			      	</span>
+				
 			      	<!-- Add spacer, to align navigation to the right -->
 			      	<div class="mdl-layout-spacer"></div>
 
 			      	<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
-				        <label class="mdl-button mdl-js-button mdl-button--icon" for="search-exp">
+				        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
 				         	<i class="material-icons">search</i>
 				        </label>
 				        <div class="mdl-textfield__expandable-holder">
-				          <input class="mdl-textfield__input" type="text" name="sample" id="search-exp"/>
+				          <input class="mdl-textfield__input" id="search" type="search" onsearch="consultaRapida();"/>
 				        </div>
 			      	</div>
 
@@ -38,53 +39,77 @@
 			    </div>
 		  	</header>
 
-		  	<div class="mdl-layout__drawer mdl-color--grey-100">
-			    <span class="mdl-layout-title">
-		      		<img class="inf-logo-image" src="resource/inf.png"> Filtros
-		      	    </span>
-			    <!--nav class="mdl-navigation mdl-layout mdl-js-layout mdl-color--grey-100"-->
-				<nav class="mdl-navigation">
+			<div class="mdl-layout__drawer mdl-color--grey-100">
+					<span class="mdl-layout-title">
+						<img class="inf-logo-image" src="resource/inf.png"> Filtros
+					</span>
+					<div class="mdl-grid">
 
-						      		
-				
-					<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Palestra">
-					  <input type="checkbox" id="Palestra" class="mdl-checkbox__input">
-					  <span class="mdl-checkbox__label">Palestra</span>
-					</label>
-					<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Workshop">
-					  <input type="checkbox" id="Workshop" class="mdl-checkbox__input">
-					  <span class="mdl-checkbox__label">Workshop</span>
-					</label>
+							<form id="myform">
+								Tipo de evento
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Palestra">
+								  <input type="checkbox" id="Palestra" class="mdl-checkbox__input">
+								  <span class="mdl-checkbox__label">Palestra</span>
+								</label>
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Workshop">
+								  <input type="checkbox" id="Workshop" class="mdl-checkbox__input">
+								  <span class="mdl-checkbox__label">Workshop</span>
+								</label>
 
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					    <input class="mdl-textfield__input" type="text" id="txt"/>
-					    <label class="mdl-textfield__label" for="txt">Palavras-chave</label>
+								<div class="mdl-textfield mdl-js-textfield">
+									Data mínima
+									<input type="date" id="ts">
+								</div>
+
+								<div class="mdl-textfield mdl-js-textfield">
+									Data máxima
+									<input type="date" id="te">
+								</div>
+
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								    <input class="mdl-textfield__input" type="text" id="txt"/>
+								    <label class="mdl-textfield__label" for="txt">Palavras-chave</label>
+								</div>
+
+								<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
+								  <thead>
+								    <tr>
+								      <th class="mdl-data-table__cell--non-numeric">Marcadores</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+								    <tr>
+								      <td class="mdl-data-table__cell--non-numeric">Administração</td>
+								    </tr>
+								    <tr>
+								      <td class="mdl-data-table__cell--non-numeric">Computação</td>
+								    </tr>
+								    <tr>
+								      <td class="mdl-data-table__cell--non-numeric">Geral</td>
+								    </tr>
+								    <tr>
+								      <td class="mdl-data-table__cell--non-numeric">Humanas</td>
+								    </tr>
+								  </tbody>
+								</table>
+
+
+							</form>
+
+		    
+						<div class="mdl-cell mdl-cell--top ">
+							<button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" 
+								onclick="limpa();">Limpar</button>
+						</div>
+						<div class="mdl-cell mdl-cell--bottom ">
+							<button class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect" 
+								onclick="consulta();">Buscar</button>
+							<!--button class="mdl-button mdl-button--fab mdl-button--colored mdl-js-button mdl-js-ripple-effect" 
+								onclick="consulta();"><i class="material-icons">send</i></button-->
+						</div>
 					</div>
 
-					Data mínima					
-					<div class="mdl-textfield mdl-js-textfield">
-						<input type="date" id="ts">
-					</div>
 
-					Data máxima
-					<div class="mdl-textfield mdl-js-textfield">
-						<input type="date" id="te">
-					</div>
-
-					<button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" type="reset">Limpar</button>
-					<button class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect" 
-						onclick="consulta();">Buscar</button>
-					<!--button class="mdl-button mdl-button--fab mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="consulta();">
-						<i class="material-icons">send</i></button-->
-
-				
-
-					<!--a class="mdl-navigation__link" href="">Link</a>
-			      		<a class="mdl-navigation__link" href="">Link</a>
-			      		<a class="mdl-navigation__link" href="">Link</a>
-			      		<a class="mdl-navigation__link" href="">Link</a-->
-
-			    </nav>
   			</div>
 
 		  	<main class="mdl-layout__content content">
@@ -96,6 +121,10 @@
 		
 
 		<!-- Placed at the end of the document so the pages load faster -->
+		 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		  <link rel="stylesheet" href="/resources/demos/style.css">
 		<script src="js/jquery-1.11.3.min.js"></script>
 		<script src="js/material.min.js"></script>
 

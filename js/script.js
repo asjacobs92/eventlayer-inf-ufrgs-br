@@ -85,20 +85,20 @@ function initializeEvents(eventList) {
   		};
 
 		marker = new google.maps.Marker({
-			position: new google.maps.LatLng(eventList[0].Latitude, eventList[0].Longitude),
+			position: new google.maps.LatLng(eventList[0].latitude, eventList[0].longitude),
 			map: map,
 			animation: google.maps.Animation.DROP,
 			icon: imageSimple,
-			title: eventList[0].EventTitle
+			title: eventList[0].title
 		});
 
 
 		bigMarker = new google.maps.Marker({
-			position: new google.maps.LatLng(eventList[1].Latitude, eventList[1].Longitude),
+			position: new google.maps.LatLng(eventList[1].latitude, eventList[1].longitude),
 			map: map,
 			animation: google.maps.Animation.DROP,
 			icon: imageBig,
-			title: eventList[1].EventTitle
+			title: eventList[1].title
 		});
 
 		function toggleBounce() {

@@ -1,189 +1,19 @@
-var eventList =
-[
-	{
-		"EventId":1,
-		"EventTitle":"Feira de Oportunidade da UFRGS",
-		"EventType":"Palestra",
-		"EventImage":"resource/logo.jpg",
-		"TimeStart":"2014-02-05 15:25:23",
-		"TimeEnd":"2014-02-28 14:29:48",
-		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
-		"Longitude":-51.121261,
-		"Latitude":-30.068719
-	},
-	{
-		"EventId":2,
-		"EventTitle":"Workshop de WebServices",
-		"EventType":"Workshop",
-		"EventImage":"resource/logo2.jpg",
-		"TimeStart":"2014-02-05 00:00:00",
-		"TimeEnd":"2014-02-17 00:00:00",
-		"Description":"Workshop sobre diferentes tipos de WebServices.",
-		"Longitude":-51.120520,
-		"Latitude":-30.068685
-	},
-	{
-		"EventId":3,
-		"EventTitle":"Feira de Oportunidade da UFRGS",
-		"EventType":"Palestra",
-		"EventImage":"resource/logo.jpg",
-		"TimeStart":"2014-02-05 15:25:23",
-		"TimeEnd":"2014-02-28 14:29:48",
-		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
-		"Longitude":-51.121261,
-		"Latitude":-30.068719
-	},
-	{
-		"EventId":4,
-		"EventTitle":"Workshop de WebServices",
-		"EventType":"Workshop",
-		"EventImage":"resource/logo2.jpg",
-		"TimeStart":"2014-02-05 00:00:00",
-		"TimeEnd":"2014-02-17 00:00:00",
-		"Description":"Workshop sobre diferentes tipos de WebServices.",
-		"Longitude":-51.120520,
-		"Latitude":-30.068685
-	},
-	{
-		"EventId":5,
-		"EventTitle":"Feira de Oportunidade da UFRGS",
-		"EventType":"Palestra",
-		"EventImage":"resource/logo.jpg",
-		"TimeStart":"2014-02-05 15:25:23",
-		"TimeEnd":"2014-02-28 14:29:48",
-		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
-		"Longitude":-51.121261,
-		"Latitude":-30.068719
-	},
-	{
-		"EventId":6,
-		"EventTitle":"Workshop de WebServices",
-		"EventType":"Workshop",
-		"EventImage":"resource/logo2.jpg",
-		"TimeStart":"2014-02-05 00:00:00",
-		"TimeEnd":"2014-02-17 00:00:00",
-		"Description":"Workshop sobre diferentes tipos de WebServices.",
-		"Longitude":-51.120520,
-		"Latitude":-30.068685
-	},
-	{
-		"EventId":7,
-		"EventTitle":"Feira de Oportunidade da UFRGS",
-		"EventType":"Palestra",
-		"EventImage":"resource/logo.jpg",
-		"TimeStart":"2014-02-05 15:25:23",
-		"TimeEnd":"2014-02-28 14:29:48",
-		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
-		"Longitude":-51.121261,
-		"Latitude":-30.068719
-	},
-	{
-		"EventId":8,
-		"EventTitle":"Workshop de WebServices",
-		"EventType":"Workshop",
-		"EventImage":"resource/logo2.jpg",
-		"TimeStart":"2014-02-05 00:00:00",
-		"TimeEnd":"2014-02-17 00:00:00",
-		"Description":"Workshop sobre diferentes tipos de WebServices.",
-		"Longitude":-51.120520,
-		"Latitude":-30.068685
-	},
-	{
-		"EventId":9,
-		"EventTitle":"Feira de Oportunidade da UFRGS",
-		"EventType":"Palestra",
-		"EventImage":"resource/logo.jpg",
-		"TimeStart":"2014-02-05 15:25:23",
-		"TimeEnd":"2014-02-28 14:29:48",
-		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
-		"Longitude":-51.121261,
-		"Latitude":-30.068719
-	},
-	{
-		"EventId":10,
-		"EventTitle":"Workshop de WebServices",
-		"EventType":"Workshop",
-		"EventImage":"resource/logo2.jpg",
-		"TimeStart":"2014-02-05 00:00:00",
-		"TimeEnd":"2014-02-17 00:00:00",
-		"Description":"Workshop sobre diferentes tipos de WebServices.",
-		"Longitude":-51.120520,
-		"Latitude":-30.068685
-	},
-	{
-		"EventId":11,
-		"EventTitle":"Feira de Oportunidade da UFRGS",
-		"EventType":"Palestra",
-		"EventImage":"resource/logo.jpg",
-		"TimeStart":"2014-02-05 15:25:23",
-		"TimeEnd":"2014-02-28 14:29:48",
-		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
-		"Longitude":-51.121261,
-		"Latitude":-30.068719
-	},
-	{
-		"EventId":12,
-		"EventTitle":"Workshop de WebServices",
-		"EventType":"Workshop",
-		"EventImage":"resource/logo2.jpg",
-		"TimeStart":"2014-02-05 00:00:00",
-		"TimeEnd":"2014-02-17 00:00:00",
-		"Description":"Workshop sobre diferentes tipos de WebServices.",
-		"Longitude":-51.120520,
-		"Latitude":-30.068685
-	},
-	{
-		"EventId":13,
-		"EventTitle":"Feira de Oportunidade da UFRGS",
-		"EventType":"Palestra",
-		"EventImage":"resource/logo.jpg",
-		"TimeStart":"2014-02-05 15:25:23",
-		"TimeEnd":"2014-02-28 14:29:48",
-		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
-		"Longitude":-51.121261,
-		"Latitude":-30.068719
-	},
-	{
-		"EventId":14,
-		"EventTitle":"Workshop de WebServices",
-		"EventType":"Workshop",
-		"EventImage":"resource/logo2.jpg",
-		"TimeStart":"2014-02-05 00:00:00",
-		"TimeEnd":"2014-02-17 00:00:00",
-		"Description":"Workshop sobre diferentes tipos de WebServices.",
-		"Longitude":-51.120520,
-		"Latitude":-30.068685
-	},
-	{
-		"EventId":15,
-		"EventTitle":"Feira de Oportunidade da UFRGS",
-		"EventType":"Palestra",
-		"EventImage":"resource/logo.jpg",
-		"TimeStart":"2014-02-05 15:25:23",
-		"TimeEnd":"2014-02-28 14:29:48",
-		"Description":"Feira para palestras de empresas interessadas na carne fresca da UFRGS.",
-		"Longitude":-51.121261,
-		"Latitude":-30.068719
-	},
-	{
-		"EventId":16,
-		"EventTitle":"Workshop de WebServices",
-		"EventType":"Workshop",
-		"EventImage":"resource/logo2.jpg",
-		"TimeStart":"2014-02-05 00:00:00",
-		"TimeEnd":"2014-02-17 00:00:00",
-		"Description":"Workshop sobre diferentes tipos de WebServices.",
-		"Longitude":-51.120520,
-		"Latitude":-30.068685
-	}
-];
+// Variaveis Globais
 
+var eventList;		//Armazena todos os eventos
 var map;
+var markers = [];	//Armazena todos os marcadores do mapa
+
+var page = "php/consulta.php"; 	//Página para a consulta dos eventos no banco de dados
+
+//Inicializa com a página
 function initialize() {
 	initializeMap();
-	initializeEvents();
+	$.getJSON(page, initializeEvents); //Retorna a lista de eventos da pagina PAGE e aplica como parametro na função initializeEvents
+
 }
 
+//Inicializa o mapa
 function initializeMap() {
 	var mapCanvas = document.getElementById("events-map");
 	var mapOptions = {
@@ -195,36 +25,46 @@ function initializeMap() {
 	map = new google.maps.Map(mapCanvas, mapOptions)
 }
 
-function initializeEvents() {
+function initializeEvents(eventList) {
+	
 	var infowindow = new google.maps.InfoWindow(), marker, i;
+
+	//Variaveis para definir o centro do mapa
+	var centerLng = 0;
+	var centerLat = 0;
+
 	for (i = 0; i < eventList.length; i++) {
-		var start = eventList[i].TimeStart.split(" ");
+		var start = eventList[i].timeStart.split(" ");
 		var startDate = start[0];
 		var startTime = start[1];
 
-		var end = eventList[i].TimeEnd.split(" ");
+		var end = eventList[i].timeEnd.split(" ");
 		var endDate = end[0];
 		var endTime = end[1];
 
+		//Soma as coordenadas de cada um dos marcadores, para depois fazer a média de localização
+		centerLat += parseFloat(eventList[i].latitude);
+		centerLng += parseFloat(eventList[i].longitude);
+
 		var eventInfo =
 			"<form action='index.php' method='post'>" +
-				"<input type='text' value='" + eventList[i].EventId +"' hidden name='eventId'/>" +
+				"<input type='text' value='" + eventList[i].eventId +"' hidden name='eventId'/>" +
 				"<div class='event-card-wide mdl-card mdl-shadow--2dp mdl-js-ripple-effect'>" + 
-			      	"<div class='mdl-card__title' style='background: url("+ eventList[i].EventImage +") left top / cover'>" + 
-			      		"<h2 class='mdl-card__title-text'>" + eventList[i].EventTitle + "</h2>" + 
+			      	"<div class='mdl-card__title' style='background: url("+ eventList[i].image +") left top / cover'>" + 
+			      		"<h2 class='mdl-card__title-text'>" + eventList[i].title + "</h2>" + 
 			      	"</div>" +
 			      	"<div class='mdl-card__supporting-text'>" + 
 			      		"<table id='eventPopup'>" +
 				      		"<tr>" +
 								"<td class='inp' colspan='0'>Início em </td>" +
 								"<td class='inp' colspan='2'> <strong>" + startDate + "</strong> às <strong>"+ startTime + "</strong> </td>" +
-								"<td class='inp' colspan='3'>" + eventList[i].EventType + "</td>" +
+								"<td class='inp' colspan='3'>" + eventList[i].type + "</td>" +
 							"</tr>" +
 							"<tr>" +
 								"<td class='inp' colspan='0'> até </td><td class='inp' colspan='2' style='text-align:center;'> <strong>" + endDate + "</strong> às <strong>" + endTime + "</strong></td>" +
 							"</tr>" +
 						"</table>" +
-						eventList[i].Description + 
+						eventList[i].description + eventList[i].placeName +
 			      	"</div>" +
 			    "</div>" +
 		    "</form>";
@@ -245,20 +85,9 @@ function initializeEvents() {
   		};
 
 		marker = new google.maps.Marker({
-			position: new google.maps.LatLng(eventList[0].Latitude, eventList[0].Longitude),
+			position: new google.maps.LatLng(eventList[i].latitude, eventList[i].longitude),
 			map: map,
-			animation: google.maps.Animation.DROP,
-			icon: imageSimple,
-			title: eventList[0].EventTitle
-		});
-
-
-		bigMarker = new google.maps.Marker({
-			position: new google.maps.LatLng(eventList[1].Latitude, eventList[1].Longitude),
-			map: map,
-			animation: google.maps.Animation.DROP,
-			icon: imageBig,
-			title: eventList[1].EventTitle
+			title: eventList[i].title
 		});
 
 		function toggleBounce() {
@@ -304,9 +133,119 @@ function initializeEvents() {
 		    // Apply the desired effect to the close button
 		    infoWindowCloseBtn.css({display: 'none'});
 		  });
+
+		markers.push(marker);
 	}
+
+	//Calcula a localização central (média) entre os marcadores de eventos
+	centerLat /= eventList.length;
+	centerLng /= eventList.length;
+
+	//Define o centro do mapa
+	var center = new google.maps.LatLng(centerLat, centerLng);
+	map.setCenter(center);
+	
+}
+
+//Limpa todos os marcadores do mapa
+function deleteMarkers() {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers = [];
 }
 
 function toggleList() {
 	$('#events-list').slideToggle();
-} 
+}
+
+//Constrói a consulta ao banco de dados de acordo com os filtros aplicados
+function consulta() {
+
+	var and = 0;	//Valor booleano para aplicar mais de um filtro
+
+	//Fecha a aba lateral
+	$('.mdl-layout__drawer').removeClass('is-visible');
+
+	page = "php/consulta.php";	//Página base
+
+	//Pesquisa por palavra-chave
+	if ($("#txt").val().length > 0){
+		var value = $("#txt").val();
+		page = page + "?txt=" + value;
+		and = 1;
+	}
+
+	//Data inicial (mínima)
+	if ($("#ts").val().length > 0){
+		var value = $("#ts").val();
+		if(and){
+			page = page + "&ts=" + value;
+		}
+		else{
+			page = page + "?ts=" + value;
+			and = 1;
+		}
+	}
+
+	//Data final (máxima)
+	if ($("#te").val().length > 0){
+		var value = $("#te").val();
+		if(and){
+			page = page + "&te=" + value;
+		}
+		else{
+			page = page + "?te=" + value;
+			and = 1;
+		}
+	}
+
+	//Tipo de evento
+	if ($("#Workshop").prop('checked')){
+		if(and){
+			page = page + "&wo=1";
+		}
+		else{
+			page = page + "?wo=1";
+			and = 1;
+		}
+	}
+
+	//Tipo de evento
+	if ($("#Palestra").prop('checked')){
+		if(and){
+			page = page + "&pa=1";
+		}
+		else{
+			page = page + "?pa=1";
+			and = 1;
+		}
+	}
+
+	//alert(page);
+
+	//Limpa os eventos e marcadores
+	$('#events-list').empty();
+	eventList = null;
+	deleteMarkers();
+
+	//Realiza noca busca
+	$.getJSON(page, initializeEvents);
+
+}
+
+//Limpa o formulário de filtros
+function limpa(){
+	$('#myform').trigger("reset");
+	$('#txt').val("");
+	$('.mdl-checkbox').removeClass('is-checked');
+}
+
+//Consulta rápida, apenas por palavra-chave
+function consultaRapida(){
+		limpa();
+		$('#txt').val($('#search').val());
+		consulta();
+		$('#txt').val("");
+}
+

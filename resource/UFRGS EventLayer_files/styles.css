@@ -1,0 +1,105 @@
+html, body {
+	height: 100%;
+	width: 100%;
+  	margin: 0px;
+  	padding: 0px;
+}
+
+#events-map {
+    overflow: hidden !important;
+}
+
+#events-list {
+    top: 64px;
+    right: 0px;
+    z-index: 1;
+    height: calc(100% - 64px);
+    position: fixed;
+    overflow: hidden;
+    overflow-y: scroll;
+    display: none;
+    background: #FFF;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
+
+}
+
+.content {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.custom-header .mdl-layout__header,
+.custom-header .mdl-layout__drawer-button {
+    /* This background is dark, so we set text to white. Use 87% black instead if
+    your background is light. */
+  	color: white;
+ 	  background-color: #2C2C2C;
+}
+
+.custom-header .mdl-layout__header-row .mdl-navigation__link:last-of-type  {
+  	padding-right: 0;
+}
+
+.mdl-layout__drawer span.mdl-layout-title {
+  	color: white;
+    background: #2C2C2C;
+}
+
+.mdl-layout__drawer a.mdl-navigation__link {
+  	color: #EEE;
+  	font-weight: 700;
+  	font-size: 14px;
+}
+
+.mdl-layout__drawer a.mdl-navigation__link:hover {
+  	color: #000;
+}
+
+.mdl-layout .mdl-layout__drawer{
+  	background: #2C2C2C;
+  	border-color: #2C2C2C;
+}
+
+.event-card-wide.mdl-card {
+  	width: 448px;
+}
+
+.event-card-wide > .mdl-card__title {
+  	color: #fff;
+  	height: 150px;
+}
+
+.event-card-wide > .mdl-card__menu {
+  	color: #fff;
+}
+
+.inf-logo-image {
+    max-width: 65px;  
+}
+
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
+}
+
+.inp {
+    text-align:right !important;
+}
+
+.justified div {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.clickable div {
+    cursor: pointer;
+}
+
+.gm-style-iw {
+    width: 448px !important;
+    top: 13px !important;
+    background: #FFF;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
+    border-radius: 2px 2px 6px 6px;
+}

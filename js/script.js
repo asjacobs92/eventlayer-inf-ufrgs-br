@@ -230,11 +230,44 @@ function initializeEvents() {
 		    "</form>";
 		$('#events-list').append(("<div class='mdl-cell mdl-cell--1-col clickable justified'> " + eventInfo + "</div>"));	//events on list
 
+	  	var imageBig = {
+	    	url: 'resource/gps45.png',
+		  	size: new google.maps.Size(50, 60),
+		  	origin: new google.maps.Point(4, 0),
+		  	scaledSize: new google.maps.Size(60, 60)
+  		};
+
+  		var imageSimple = {
+	    	url: 'resource/pin59.png',
+		  	size: new google.maps.Size(40, 60),
+		  	origin: new google.maps.Point(4, 0),
+		  	scaledSize: new google.maps.Size(50, 50)
+  		};
+
 		marker = new google.maps.Marker({
-			position: new google.maps.LatLng(eventList[i].Latitude, eventList[i].Longitude),
+			position: new google.maps.LatLng(eventList[0].Latitude, eventList[0].Longitude),
 			map: map,
-			title: eventList[i].EventTitle
+			animation: google.maps.Animation.DROP,
+			icon: imageSimple,
+			title: eventList[0].EventTitle
 		});
+
+
+		bigMarker = new google.maps.Marker({
+			position: new google.maps.LatLng(eventList[1].Latitude, eventList[1].Longitude),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: imageBig,
+			title: eventList[1].EventTitle
+		});
+
+		function toggleBounce() {
+		  if (marker.getAnimation() !== null) {
+		    marker.setAnimation(null);
+		  } else {
+		    marker.setAnimation(google.maps.Animation.BOUNCE);
+		  }
+		}
 
 		google.maps.event.addListener(marker, 'mouseover', (function(marker, eventInfo) {		//markers on map
 			return function() {
@@ -248,6 +281,12 @@ function initializeEvents() {
 					infowindow.close();
 			}
 		}) (marker, eventInfo));
+
+		google.maps.event.addListener(bigMarker, 'click', (function(bigMarker, eventInfo) {		//markers on map
+			return function() {
+					$('#events-list').slideToggle();
+			}
+		}) (bigMarker, eventInfo));
 
 		google.maps.event.addListener(infowindow, 'domready', function() {
 		    // Reference to the DIV that wraps the bottom of infowindow

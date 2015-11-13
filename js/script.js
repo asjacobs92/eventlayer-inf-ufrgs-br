@@ -85,9 +85,20 @@ function initializeEvents(eventList) {
   		};
 
 		marker = new google.maps.Marker({
-			position: new google.maps.LatLng(eventList[i].latitude, eventList[i].longitude),
+			position: new google.maps.LatLng(eventList[0].Latitude, eventList[0].Longitude),
 			map: map,
-			title: eventList[i].title
+			animation: google.maps.Animation.DROP,
+			icon: imageSimple,
+			title: eventList[0].EventTitle
+		});
+
+
+		bigMarker = new google.maps.Marker({
+			position: new google.maps.LatLng(eventList[1].Latitude, eventList[1].Longitude),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: imageBig,
+			title: eventList[1].EventTitle
 		});
 
 		function toggleBounce() {

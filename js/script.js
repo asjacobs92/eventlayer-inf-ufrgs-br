@@ -1,8 +1,11 @@
 // Variaveis Globais
 
-var eventList;		//Armazena todos os eventos
+var eventList;		//Armazena todos os eventos em JSON
 var map;
 var markers = [];	//Armazena todos os marcadores do mapa
+var cards = [];		//Armazena todos os cartões de eventos
+var mcOptions;
+var markerCluster;
 
 var page = "php/consulta.php"; 	//Página para a consulta dos eventos no banco de dados
 
@@ -34,101 +37,52 @@ function initializeEvents(eventList) {
 	var centerLat = 0;
 
 	for (i = 0; i < eventList.length; i++) {
-		var start = eventList[i].timeStart.split(" ");
-		var startDate = start[0];
-		var startTime = start[1];
-
-		var end = eventList[i].timeEnd.split(" ");
-		var endDate = end[0];
-		var endTime = end[1];
 
 		//Soma as coordenadas de cada um dos marcadores, para depois fazer a média de localização
 		centerLat += parseFloat(eventList[i].latitude);
 		centerLng += parseFloat(eventList[i].longitude);
 
-		var eventInfo =
-			"<form action='index.php' method='post'>" +
-				"<input type='text' value='" + eventList[i].eventId +"' hidden name='eventId'/>" +
-				"<div class='event-card-wide mdl-card mdl-shadow--2dp mdl-js-ripple-effect'>" + 
-			      	"<div class='mdl-card__title' style='background: url("+ eventList[i].image +") left top / cover'>" + 
-			      		"<h2 class='mdl-card__title-text'>" + eventList[i].title + "</h2>" + 
-			      	"</div>" +
-			      	"<div class='mdl-card__supporting-text'>" + 
-			      		"<table id='eventPopup'>" +
-				      		"<tr>" +
-								"<td class='inp' colspan='0'>Início em </td>" +
-								"<td class='inp' colspan='2'> <strong>" + startDate + "</strong> às <strong>"+ startTime + "</strong> </td>" +
-								"<td class='inp' colspan='3'>" + eventList[i].type + "</td>" +
-							"</tr>" +
-							"<tr>" +
-								"<td class='inp' colspan='0'> até </td><td class='inp' colspan='2' style='text-align:center;'> <strong>" + endDate + "</strong> às <strong>" + endTime + "</strong></td>" +
-							"</tr>" +
-						"</table>" +
-						eventList[i].description + eventList[i].placeName +
-			      	"</div>" +
-			    "</div>" +
-		    "</form>";
-		$('#events-list').append(("<div class='mdl-cell mdl-cell--1-col clickable justified'> " + eventInfo + "</div>"));	//events on list
+		// Compõe o card de um Evento através de outra função
 
-	  	var imageBig = {
-	    	url: 'resource/gps45.png',
-		  	size: new google.maps.Size(50, 60),
-		  	origin: new google.maps.Point(4, 0),
-		  	scaledSize: new google.maps.Size(60, 60)
-  		};
+		var card = createEventInfo(eventList[i]);
 
-  		var imageSimple = {
-	    	url: 'resource/pin59.png',
-		  	size: new google.maps.Size(40, 60),
-		  	origin: new google.maps.Point(4, 0),
-		  	scaledSize: new google.maps.Size(50, 50)
-  		};
+		// Alimenta a Lista de eventos
+		$('#events-list').append(("<div class='mdl-cell mdl-cell--1-col clickable' onclick='openMarker(" + i + ")'> " + card + "</div>"));	//events on list
+
 
 		marker = new google.maps.Marker({
-			position: new google.maps.LatLng(eventList[0].latitude, eventList[0].longitude),
+			position: new google.maps.LatLng(eventList[i].latitude, eventList[i].longitude),
 			map: map,
 			animation: google.maps.Animation.DROP,
-			icon: imageSimple,
-			title: eventList[0].title
+			//icon: imageSimple,
+			title: eventList[i].title
 		});
 
-
-		bigMarker = new google.maps.Marker({
-			position: new google.maps.LatLng(eventList[1].latitude, eventList[1].longitude),
-			map: map,
-			animation: google.maps.Animation.DROP,
-			icon: imageBig,
-			title: eventList[1].title
-		});
 
 		function toggleBounce() {
-		  if (marker.getAnimation() !== null) {
-		    marker.setAnimation(null);
-		  } else {
-		    marker.setAnimation(google.maps.Animation.BOUNCE);
-		  }
+			if (marker.getAnimation() !== null) {
+				marker.setAnimation(null);
+			} else {
+				marker.setAnimation(google.maps.Animation.BOUNCE);
+			}
 		}
 
-		google.maps.event.addListener(marker, 'mouseover', (function(marker, eventInfo) {		//markers on map
+		google.maps.event.addListener(marker, 'click', (function(marker, card) {		//markers on map
 			return function() {
-					infowindow.setContent(eventInfo);
+					infowindow.setContent(card);
 					infowindow.open(map, marker);
+					centerAtMarker(marker);
 			}
-		}) (marker, eventInfo));
+		}) (marker, card));
 
-		google.maps.event.addListener(marker, 'mouseout', (function(marker, eventInfo) {		//markers on map
+		google.maps.event.addListener(map, 'click', (function(marker, card) {		//markers on map
 			return function() {
 					infowindow.close();
 			}
-		}) (marker, eventInfo));
+		}) (marker, card));
 
-		google.maps.event.addListener(bigMarker, 'click', (function(bigMarker, eventInfo) {		//markers on map
-			return function() {
-					$('#events-list').slideToggle();
-			}
-		}) (bigMarker, eventInfo));
 
-		google.maps.event.addListener(infowindow, 'domready', function() {
+		/*google.maps.event.addListener(infowindow, 'domready', function() {
 		    // Reference to the DIV that wraps the bottom of infowindow
 		    var infoWindowOuter = $('.gm-style-iw');
 		    var infoWindowBackground = infoWindowOuter.prev();
@@ -142,11 +96,31 @@ function initializeEvents(eventList) {
 		    // Reference to the div that groups the close button elements.
 		    var infoWindowCloseBtn = infoWindowOuter.next();
 		    // Apply the desired effect to the close button
-		    infoWindowCloseBtn.css({display: 'none'});
-		  });
+		    //infoWindowCloseBtn.css({display: 'none'});
+		  });*/
 
 		markers.push(marker);
+		cards.push(card);
+		//markers.push(bigMarker);
 	}
+
+	// Define os parametros e cria os clusters de agrupamento dos marcadores
+	mcOptions = {
+		//gridSize: 30, 
+		maxZoom: 17, 
+		//zoomOnClick: false
+	};
+	markerCluster = new MarkerClusterer(map, markers, mcOptions);
+
+	/*google.maps.event.addListener(markerCluster,'clusterclick', 
+		function(cluster){
+			var clusterCenter = cluster.getCenter();
+			//centerAtMarker(markersArray[0]);
+			map.setZoom(18);
+			map.panTo(clusterCenter);
+			map.panBy(0,-100);
+		}
+	);*/
 
 	//Calcula a localização central (média) entre os marcadores de eventos
 	centerLat /= eventList.length;
@@ -155,15 +129,17 @@ function initializeEvents(eventList) {
 	//Define o centro do mapa
 	var center = new google.maps.LatLng(centerLat, centerLng);
 	map.setCenter(center);
+	map.panBy(0,-100);
 	
 }
 
 //Limpa todos os marcadores do mapa
 function deleteMarkers() {
-  for (var i = 0; i < markers.length; i++) {
-    markers[i].setMap(null);
-  }
-  markers = [];
+	for (var i = 0; i < markers.length; i++) {
+		markers[i].setMap(null);
+	}
+	markers = [];
+	markerCluster.clearMarkers();
 }
 
 function toggleList() {
@@ -240,7 +216,7 @@ function consulta() {
 	eventList = null;
 	deleteMarkers();
 
-	//Realiza noca busca
+	//Realiza nova busca
 	$.getJSON(page, initializeEvents);
 
 }
@@ -249,6 +225,7 @@ function consulta() {
 function limpa(){
 	$('#myform').trigger("reset");
 	$('#txt').val("");
+	$('#search').val("");
 	$('.mdl-checkbox').removeClass('is-checked');
 }
 
@@ -258,5 +235,59 @@ function consultaRapida(){
 		$('#txt').val($('#search').val());
 		consulta();
 		$('#txt').val("");
+}
+
+// Centraliza mapa após selecionar um marcador
+function centerAtMarker(marker){
+	var markerCenter = new google.maps.LatLng(marker.getPosition().lat(),marker.getPosition().lng());
+	map.setZoom(18);
+	map.panTo(markerCenter);
+	map.panBy(0,-100);
+}
+
+// Localiza o marcador na lista de eventos (event-list)
+function openMarker(id){
+	google.maps.event.trigger(markers[id], 'click');
+	toggleList();
+}
+
+// Cria o Card em HTML com as informações do Evento
+function createEventInfo(event){
+	var start = event.timeStart.split(" ");
+	var startDate = start[0];
+	var startTime = start[1];
+
+	var end = event.timeEnd.split(" ");
+	var endDate = end[0];
+	var endTime = end[1];
+
+	var card = "<!--form action='index.php' method='post'-->" +
+			"<input type='text' value='" + event.eventId +"' hidden name='eventId'/>" +
+			"<div class='event-card-wide mdl-card mdl-shadow--2dp mdl-js-ripple-effect'>" + 
+			      	"<div class='mdl-card__title' style='background: url("+ event.image +") left top / cover'>" + 
+			      		"<h2 class='mdl-card__title-text'>" + event.title + "</h2>" + 
+			      	"</div>" +
+			      	"<div class='mdl-card__supporting-text'>" + 
+			      		"<table id='eventPopup'>" +
+						"<tr>" +
+							"<td class='inp' colspan='0'>" + event.type + "</td>" +
+						"</tr>" +
+				      		"<tr>" +
+							"<td class='inp' colspan='0'>Início em </td>" +
+							"<td class='inp' colspan='2'> <strong>" + startDate + "</strong> às <strong>"+ startTime + "</strong> </td>" +
+						"</tr>" +
+						"<tr>" +
+							"<td class='inp' colspan='0'> até </td><td class='inp' colspan='2' style='text-align:center;'> <strong>" + endDate + "</strong> às <strong>" + endTime + "</strong></td>" +
+						"</tr>" +
+					event.description +
+						"</tr>" +
+						"<tr>" + 
+							"<td class='inp' colspan='3'><strong> " + event.placeName + " </strong> </td>" +
+						"</tr>" +
+					"</table>" +
+			      	"</div>" +
+			"</div>" +
+		"<!--/form-->";
+	return card;
 }
 

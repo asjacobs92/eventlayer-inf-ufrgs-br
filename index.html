@@ -20,7 +20,7 @@
 				<span class="mdl-layout-title">
 			      		<a href=""><img class="inf-logo-image" src="resource/inf.png"></a>EventLayer
 			      	</span>
-				
+
 			      	<!-- Add spacer, to align navigation to the right -->
 			      	<div class="mdl-layout-spacer"></div>
 
@@ -44,7 +44,6 @@
 						<img class="inf-logo-image" src="resource/inf.png"> Filtros
 					</span>
 					<div class="mdl-grid">
-
 							<form id="myform">
 								Tipo de evento
 								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Palestra">
@@ -74,7 +73,7 @@
 								<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
 								  <thead>
 								    <tr>
-								      <th class="mdl-data-table__cell--non-numeric">Marcadores</th>
+								      <th class="mdl-data-table__cell--non-numeric">Todos</th>
 								    </tr>
 								  </thead>
 								  <tbody>
@@ -96,15 +95,15 @@
 
 							</form>
 
-		    
+
 						<div class="mdl-cell mdl-cell--top ">
-							<button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" 
+							<button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect"
 								onclick="limpa();">Limpar</button>
 						</div>
 						<div class="mdl-cell mdl-cell--bottom ">
-							<button class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect" 
+							<button class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect red-button"
 								onclick="consulta();">Buscar</button>
-							<!--button class="mdl-button mdl-button--fab mdl-button--colored mdl-js-button mdl-js-ripple-effect" 
+							<!--button class="mdl-button mdl-button--fab mdl-button--colored mdl-js-button mdl-js-ripple-effect"
 								onclick="consulta();"><i class="material-icons">send</i></button-->
 						</div>
 					</div>
@@ -114,17 +113,19 @@
 
 		  	<main class="mdl-layout__content content">
 		  		<div id="events-map" class="content"></div>
+				<button id="add-event-fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored red-button">
+				  <i class="material-icons">add</i>
+				</button>
 
 				<div id="events-list" class="mdl-grid"></div>
 		  	</main>
 	  	</div>
-		
+
 
 		<!-- Placed at the end of the document so the pages load faster -->
-		 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-		  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-		  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-		  <link rel="stylesheet" href="/resources/demos/style.css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<script src="js/jquery-1.11.3.min.js"></script>
 		<script src="js/material.min.js"></script>
 
@@ -133,5 +134,6 @@
 		<!-- Agrupador de marcadores do google maps-->
 		<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/data.json"></script>
 		<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+		<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
   </body>
 </html>

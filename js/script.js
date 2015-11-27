@@ -29,9 +29,8 @@ function initializeMap() {
 }
 
 function initializeEvents(eventList) {
-	
-	var infowindow = new google.maps.InfoWindow(), marker, i;
 
+	var infobox = new InfoBox(), marker, i;
 	//Variaveis para definir o centro do mapa
 	var centerLng = 0;
 	var centerLat = 0;
@@ -44,17 +43,27 @@ function initializeEvents(eventList) {
 
 		// Compõe o card de um Evento através de outra função
 
-		var card = createEventInfo(eventList[i]);
+		var card = createEventInfo(eventList[i], i);
 
 		// Alimenta a Lista de eventos
-		$('#events-list').append(("<div class='mdl-cell mdl-cell--1-col clickable' onclick='openMarker(" + i + ")'> " + card + "</div>"));	//events on list
+		var learnMoreBtn =
+			"<div class='mdl-card__actions mdl-card--border'>" +
+				"<a class='mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect'>" +
+				  "Saiba mais" +
+				"</a>" +
+			"</div>" ;
 
+		var infoboxPointer =
+			"<img class='infobox-pointer' src='resource/ic_arrow_drop_down_white.png'/>";
+
+		// Alimenta a Lista de eventos
+		$('#events-list').append(("<div class='mdl-cell mdl-cell--1-col' onclick='openMarker(" + i + ")'> " + card + "</div>"));
+		$('#events-list').find('#event-card-' + i).append(learnMoreBtn);
 
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(eventList[i].latitude, eventList[i].longitude),
 			map: map,
 			animation: google.maps.Animation.DROP,
-			//icon: imageSimple,
 			title: eventList[i].title
 		});
 
@@ -69,35 +78,21 @@ function initializeEvents(eventList) {
 
 		google.maps.event.addListener(marker, 'click', (function(marker, card) {		//markers on map
 			return function() {
-					infowindow.setContent(card);
-					infowindow.open(map, marker);
+					infobox.setContent(card + infoboxPointer);
+					infobox.setOptions({
+							maxWidth: 448,
+							pixelOffset: new google.maps.Size(-220, -300),
+						});
+					infobox.open(map, marker);
 					centerAtMarker(marker);
 			}
 		}) (marker, card));
 
 		google.maps.event.addListener(map, 'click', (function(marker, card) {		//markers on map
 			return function() {
-					infowindow.close();
+					infobox.close();
 			}
 		}) (marker, card));
-
-
-		/*google.maps.event.addListener(infowindow, 'domready', function() {
-		    // Reference to the DIV that wraps the bottom of infowindow
-		    var infoWindowOuter = $('.gm-style-iw');
-		    var infoWindowBackground = infoWindowOuter.prev();
-		    // Removes background shadow DIV
-		    infoWindowBackground.children(':nth-child(2)').css({'display' : 'none'});
-		    // Removes white background DIV
-		    infoWindowBackground.children(':nth-child(4)').css({'display' : 'none'});
-
-		    infoWindowBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(178, 178, 178, 0.6) 0px 1px 6px', 'z-index' : '1'});
-
-		    // Reference to the div that groups the close button elements.
-		    var infoWindowCloseBtn = infoWindowOuter.next();
-		    // Apply the desired effect to the close button
-		    //infoWindowCloseBtn.css({display: 'none'});
-		  });*/
 
 		markers.push(marker);
 		cards.push(card);
@@ -106,13 +101,13 @@ function initializeEvents(eventList) {
 
 	// Define os parametros e cria os clusters de agrupamento dos marcadores
 	mcOptions = {
-		//gridSize: 30, 
-		maxZoom: 17, 
+		//gridSize: 30,
+		maxZoom: 17,
 		//zoomOnClick: false
 	};
 	markerCluster = new MarkerClusterer(map, markers, mcOptions);
 
-	/*google.maps.event.addListener(markerCluster,'clusterclick', 
+	/*google.maps.event.addListener(markerCluster,'clusterclick',
 		function(cluster){
 			var clusterCenter = cluster.getCenter();
 			//centerAtMarker(markersArray[0]);
@@ -130,7 +125,7 @@ function initializeEvents(eventList) {
 	var center = new google.maps.LatLng(centerLat, centerLng);
 	map.setCenter(center);
 	map.panBy(0,-100);
-	
+
 }
 
 //Limpa todos os marcadores do mapa
@@ -252,7 +247,7 @@ function openMarker(id){
 }
 
 // Cria o Card em HTML com as informações do Evento
-function createEventInfo(event){
+function createEventInfo(event, index){
 	var start = event.timeStart.split(" ");
 	var startDate = start[0];
 	var startTime = start[1];
@@ -261,33 +256,28 @@ function createEventInfo(event){
 	var endDate = end[0];
 	var endTime = end[1];
 
-	var card = "<!--form action='index.php' method='post'-->" +
-			"<input type='text' value='" + event.eventId +"' hidden name='eventId'/>" +
-			"<div class='event-card-wide mdl-card mdl-shadow--2dp mdl-js-ripple-effect'>" + 
-			      	"<div class='mdl-card__title' style='background: url("+ event.image +") left top / cover'>" + 
-			      		"<h2 class='mdl-card__title-text'>" + event.title + "</h2>" + 
-			      	"</div>" +
-			      	"<div class='mdl-card__supporting-text'>" + 
-			      		"<table id='eventPopup'>" +
-						"<tr>" +
-							"<td class='inp' colspan='0'>" + event.type + "</td>" +
-						"</tr>" +
-				      		"<tr>" +
-							"<td class='inp' colspan='0'>Início em </td>" +
-							"<td class='inp' colspan='2'> <strong>" + startDate + "</strong> às <strong>"+ startTime + "</strong> </td>" +
-						"</tr>" +
-						"<tr>" +
-							"<td class='inp' colspan='0'> até </td><td class='inp' colspan='2' style='text-align:center;'> <strong>" + endDate + "</strong> às <strong>" + endTime + "</strong></td>" +
-						"</tr>" +
-					event.description +
-						"</tr>" +
-						"<tr>" + 
-							"<td class='inp' colspan='3'><strong> " + event.placeName + " </strong> </td>" +
-						"</tr>" +
-					"</table>" +
-			      	"</div>" +
-			"</div>" +
-		"<!--/form-->";
+	var card =
+		"<div id='event-card-"+ index +"' class='event-card-wide mdl-card mdl-shadow--2dp'>" +
+	      	"<div class='mdl-card__title' style='background: url("+ event.image +") left top / cover'>" +
+	      		"<h2 class='mdl-card__title-text'>" + event.title + "</h2>" +
+	      	"</div>" +
+			"<div class='mdl-card__supporting-text'>" +
+			  "<table style='width: 100%;'>" +
+				  "<tr>" +
+					  "<td class='inp' colspan='1'>Início em </td>" +
+					  "<td class='inp' colspan='1'> <strong>" + startDate + "</strong> às <strong>"+ startTime + "</strong> </td>" +
+					  "<td class='inp' style='width: 40%; color: rgba(255,0,0,1);' colspan='1' align='right'>" + event.type + "</td>" +
+				  "</tr>" +
+				  "<tr>" +
+					  "<td class='inp' colspan='1'>até </td>" +
+					  "<td class='inp' colspan='1'><strong>" + endDate + "</strong> às <strong>" + endTime + "</strong></td>" +
+				  "</tr>" + "<tr></tr>" +
+				  "<tr>" +
+				  	  "<td class='inp' colspan='1'>Local </td>" +
+					  "<td class='inp' colspan='2'> <strong>" + event.placeName + "</strong></td>" +
+				  "</tr>" +
+			  "</table>" +
+		  	"</div>" +
+		"</div>";
 	return card;
 }
-

@@ -9,14 +9,19 @@ html, body {
     overflow: hidden !important;
 }
 
+@media screen and (min-width: 1024px) {
+    
+}
+
 #event-details {
-	top: 64px;
+    top: 64px;
     left: 0px;
     z-index: 1;
     width: 60%;
-    height: calc(100% - 64px);
+    height: 100%;
     position: fixed;
     background: #FFF;
+    display: none;
     overflow: hidden;
     overflow-y: auto;
     box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
@@ -33,6 +38,42 @@ html, body {
     display: none;
     background: #FFF;
     box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
+}
+
+#details-close-button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: white;
+    font-size: 15px
+}
+
+.ribbon {
+  width: 100%;
+  height: 40vh;
+  background-color: #F44336;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
+
+.container-header {
+  margin-top: -35vh;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
+
+.container {
+  max-width: 1600px;
+  width: calc(100% - 16px);
+  margin: 0 auto;
+}
+
+.container-content {
+  border-radius: 2px;
+  padding: 80px 56px;
+  margin-bottom: 80px;
 }
 
 .content {
@@ -144,13 +185,18 @@ html, body {
 }
 
 .red-button {
-	background-color: #FF0000 !important;
+	background-color: #F44336 !important;
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__box-outline {
-	border-color: #FF0000 !important;
+	border-color: #F44336 !important;
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
-	background-color: #FF0000 !important;
+	background-color: #F44336 !important;
+}
+
+.description-text {
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-size: 24px;
 }

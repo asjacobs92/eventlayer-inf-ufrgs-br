@@ -39,11 +39,30 @@
 						<!--img class="inf-logo-image" src="resource/inf.png"-->
 						Pesquisa
 					</span>
+<<<<<<< HEAD
 					<div class="content-grid mdl-grid" id="myform">
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						    <input class="mdl-textfield__input" type="search" onsearch="consulta();" id="txt"/>
 						    <label class="mdl-textfield__label" for="txt">Palavras-chave</label>
 						</div>
+=======
+					<div class="mdl-grid">
+							<form id="myform">
+								Tipo de evento
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Palestra">
+								  <input type="checkbox" id="Palestra" class="mdl-checkbox__input">
+								  <span class="mdl-checkbox__label">Palestra</span>
+								</label>
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Workshop">
+								  <input type="checkbox" id="Workshop" class="mdl-checkbox__input">
+								  <span class="mdl-checkbox__label">Workshop</span>
+								</label>
+
+								<div class="mdl-textfield mdl-js-textfield">
+									Data mínima
+									<input type="date" id="ts">
+								</div>
+>>>>>>> origin/master
 
 						<div>
 						<table class="mdl-data-table mdl-js-data-table formTable">
@@ -91,6 +110,7 @@
 								<td class="mdl-data-table__cell--non-numeric">
 									Até&nbsp&nbsp
 									<input type="date" id="te">
+<<<<<<< HEAD
 								</td>
 							    </tr>
 							</tbody>
@@ -117,6 +137,50 @@
 						<div class="mdl-cell"-->
 							<button class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect red-button"
 								onclick="consulta();">Buscar</button>						
+=======
+								</div>
+
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								    <input class="mdl-textfield__input" type="text" id="txt"/>
+								    <label class="mdl-textfield__label" for="txt">Palavras-chave</label>
+								</div>
+
+								<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
+								  <thead>
+								    <tr>
+								      <th class="mdl-data-table__cell--non-numeric">Todos</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+								    <tr>
+								      <td class="mdl-data-table__cell--non-numeric">Administração</td>
+								    </tr>
+								    <tr>
+								      <td class="mdl-data-table__cell--non-numeric">Computação</td>
+								    </tr>
+								    <tr>
+								      <td class="mdl-data-table__cell--non-numeric">Geral</td>
+								    </tr>
+								    <tr>
+								      <td class="mdl-data-table__cell--non-numeric">Humanas</td>
+								    </tr>
+								  </tbody>
+								</table>
+
+
+							</form>
+
+
+						<div class="mdl-cell mdl-cell--top ">
+							<button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect"
+								onclick="limpa();">Limpar</button>
+						</div>
+						<div class="mdl-cell mdl-cell--bottom ">
+							<button class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect red-button"
+								onclick="consulta();">Buscar</button>
+							<!--button class="mdl-button mdl-button--fab mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+								onclick="consulta();"><i class="material-icons">send</i></button-->
+>>>>>>> origin/master
 						</div>
 					</div>
 

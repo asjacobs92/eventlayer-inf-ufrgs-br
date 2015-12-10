@@ -48,7 +48,11 @@ function initializeEvents(eventList) {
 		// Compõe o card de um Evento através de outra função
 
 		var card = createEventInfo(eventList[i], i);
+<<<<<<< HEAD
 		var eventDetails = createEventDetails(eventList[i], i);
+=======
+		var eventDetails = createEventDetails(eventList[i]);
+>>>>>>> origin/master
 
 		// Alimenta a Lista de eventos
 		var learnMoreBtn =
@@ -57,10 +61,17 @@ function initializeEvents(eventList) {
 				  "Saiba mais" +
 				"</a>" +
 			"</div>" ;
+<<<<<<< HEAD
 
 		var infoboxPointer =
 			"<img class='infobox-pointer' src='resource/ic_arrow_drop_down_white.png'/>";
 
+=======
+
+		var infoboxPointer =
+			"<img class='infobox-pointer' src='resource/ic_arrow_drop_down_white.png'/>";
+
+>>>>>>> origin/master
 		// Alimenta a Lista de eventos
 		$('#events-list').append(("<div class='mdl-cell mdl-cell--1-col' onclick='openEventDetails(" + i + ")'> " + card + "</div>"));
 		$('#events-list').find('#event-card-' + i).append(learnMoreBtn);
@@ -256,7 +267,11 @@ function consultaRapida(){
 
 // Centraliza mapa após selecionar um marcador
 function centerAtMarker(marker){
+<<<<<<< HEAD
 	var markerCenter = new google.maps.LatLng(marker.getPosition().lat(),marker.getPosition().lng() );
+=======
+	var markerCenter = new google.maps.LatLng(marker.getPosition().lat(),marker.getPosition().lng() - 0.0025);
+>>>>>>> origin/master
 	map.setZoom(18);
 	map.panTo(markerCenter);
 	map.panBy(0,-100);
@@ -297,13 +312,17 @@ function createEventInfo(event, index){
 
 function openEventDetails(id) {
 	openMarker(id);
+<<<<<<< HEAD
 	map.panBy(-400,-100);
+=======
+>>>>>>> origin/master
 
 	$('#event-details').empty();
 	$('#event-details').append(details[id]);
 	$('#event-details').slideToggle();
 }
 
+<<<<<<< HEAD
 function closeEventDetails(id) {
 	$('#event-details').slideToggle();
 	$('#event-details').empty();
@@ -311,6 +330,14 @@ function closeEventDetails(id) {
 }
 
 function createEventDetails(event, index) {
+=======
+function closeEventDetails() {
+	$('#event-details').slideToggle();
+	$('#event-details').empty();
+}
+
+function createEventDetails(event) {
+>>>>>>> origin/master
 	var start = event.timeStart.split(" ");
 	var startDate = start[0];
 	var startTime = start[1];
@@ -320,7 +347,11 @@ function createEventDetails(event, index) {
 	var endTime = end[1];
 
 	var eventDetails = 
+<<<<<<< HEAD
 		"<label id='details-close-button' class='mdl-button mdl-js-button mdl-button--icon' onclick=closeEventDetails(" + index + ")>" +
+=======
+		"<label id='details-close-button' class='mdl-button mdl-js-button mdl-button--icon' onclick=closeEventDetails()>" +
+>>>>>>> origin/master
 	         	"<i class='material-icons'>clear</i>" + 
         "</label>" +
 		"<div class='ribbon'></div>" +
@@ -354,6 +385,7 @@ function createEventDetails(event, index) {
 	    "</div>";
 
 	return eventDetails;
+<<<<<<< HEAD
 }
 
 //Alimenta tabela de Institutos
@@ -371,3 +403,6 @@ function tagTable(instituteList){
 		$( "#tagTableItens" ).append(texto);
 	}
 }
+=======
+}
+>>>>>>> origin/master

@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    	<title>UFRGS EventLayer</title>
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/material.min.css">
+		<link rel="stylesheet"  type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+	<div class="mdl-layout mdl-js-layout mdl-color--grey-100">
+		<main class="mdl-layout__content content">
+					<span class="mdl-layout-title">
+						Inserir
+					</span>
+					<div class="content-grid mdl-grid">
+						<form>
+						<div class="mdl-textfield mdl-js-textfield">
+						    <input class="mdl-textfield__input" type="text" id="title"/>
+						    <label class="mdl-textfield__label" for="title">Titulo</label>
+						</div>
+
+						<div class="mdl-textfield mdl-js-textfield">
+							<textarea class="mdl-textfield__input" type="text" rows= "3" id="description" ></textarea>
+							<label class="mdl-textfield__label" for="description">Descrição</label>
+						</div>
+
+						<div>
+
+						<select name="type" id="type">
+						  <option value="Palestra">Palestra</option>
+						  <option value="Workshop">Workshop</option>
+						</select>
+
+
+
+
+						<table class="mdl-data-table mdl-js-data-table formTable">
+							  <thead>
+							    <tr>
+							      <th class="mdl-data-table__cell--non-numeric">Tipo de evento</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+								<td class="mdl-data-table__cell--non-numeric">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Palestra">
+									  <input type="checkbox" id="Palestra" class="mdl-checkbox__input">
+									  Palestra
+									</label>
+								</td>
+							    </tr>
+							    <tr>
+								<td class="mdl-data-table__cell--non-numeric">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Workshop">
+									  <input type="checkbox" id="Workshop" class="mdl-checkbox__input">
+									  Workshop
+									</label>
+								</td>
+							    </tr>
+							</tbody>
+						</table>
+						</div>
+
+						<div>
+						<table class="mdl-data-table mdl-js-data-table formTable">
+							  <thead>
+							    <tr>
+							      <th class="mdl-data-table__cell--non-numeric">Período</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+								<td class="mdl-data-table__cell--non-numeric">
+									De &nbsp&nbsp
+									<input type="date" id="ts">
+								</td>
+							    </tr>
+							    <tr>
+								<td class="mdl-data-table__cell--non-numeric">
+									Até&nbsp&nbsp
+									<input type="date" id="te">
+								</td>
+							    </tr>
+							</tbody>
+						</table>
+						</div>
+
+						<div>
+						<table class="mdl-data-table mdl-js-data-table formTable">
+						  <thead>
+						    <tr>
+						      <th class="mdl-data-table__cell--non-numeric">Institutos</th>
+						    </tr>
+						  </thead>
+						  <tbody id="tagTableItens">
+							<!-- Preenchido pelo script.js -->
+						  </tbody>
+						</table>
+						</div>
+
+						<div>
+							<button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect"
+								onclick="limpa();">Limpar</button>
+						<!--/div>
+						<div class="mdl-cell"-->
+							<button class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect red-button"
+								onclick="consulta();">Buscar</button>						
+						</div>
+						</form>
+					</div>
+
+
+
+
+		  	
+		  		<div class="content"></div>
+				<button id="add-event-fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored red-button">
+				  <i class="material-icons">add</i>
+				</button>
+
+				<div id="event-details">
+					
+				</div>
+
+				<div id="events-list" class="mdl-grid"></div>
+	  	</main>
+	</div>
+
+
+		<!-- Placed at the end of the document so the pages load faster -->
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/material.min.js"></script>
+
+		<script src="js/script.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
+		<!-- Agrupador de marcadores do google maps-->
+		<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/data.json"></script>
+		<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+		<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+  </body>
+</html>

@@ -6,7 +6,7 @@ header('Content-type: application/json; charset: utf-8');
 
 
 //Default: retorna TODOS os eventos a partir da data atual
-$sql0 = "SELECT * FROM events NATURAL JOIN places";
+$sql0 = "SELECT * FROM events NATURAL JOIN places NATURAL JOIN lecturers";
 $sql = " where (timeStart >='";
 
 $date = date('Y-m-d') . " 00:00:00";
@@ -45,6 +45,13 @@ if(!empty($_GET)){
 		}
 	}
 
+	//Se a pesquisa é por TAG
+	if(isset($_GET['tag'])){
+		$sql0 = "SELECT * FROM events NATURAL JOIN places NATURAL JOIN tags NATURAL JOIN lecturers";
+		$sql .= " and (instituteId IN (".implode(',',$_GET['tag'])."))";
+
+	}
+
 	//Se a pesquisa é por palavra-chave (busca no título e na descrição)
 	if(isset($_GET['txt'])){
 		$search = str_replace(" ","%",$_GET['txt'] );
@@ -62,7 +69,7 @@ if(!empty($_GET)){
 	//Se a pesquisa é por palestrante 
 	if(isset($_GET['l'])){
 		//Amplia o escopo de pesquisa (mais custoso)
-		$sql0 = "SELECT * FROM events NATURAL JOIN places NATURAL JOIN lecturers";
+		//$sql0 = "SELECT * FROM events NATURAL JOIN places NATURAL JOIN lecturers";
 
 		$search = str_replace(" ","%",$_GET['l'] );
 		$sql .= " and (lecturerName like '%".$search."%')";

@@ -9,6 +9,24 @@ html, body {
     overflow: hidden !important;
 }
 
+@media screen and (min-width: 1024px) {
+    
+}
+
+#event-details {
+    top: 64px;
+    left: 0px;
+    z-index: 1;
+    width: 60%;
+    height: 100%;
+    position: fixed;
+    background: #FFF;
+    display: none;
+    overflow: hidden;
+    overflow-y: auto;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
+}
+
 #events-list {
     top: 64px;
     right: 0px;
@@ -20,7 +38,42 @@ html, body {
     display: none;
     background: #FFF;
     box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
+}
 
+#details-close-button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: white;
+    font-size: 15px
+}
+
+.ribbon {
+  width: 100%;
+  height: 40vh;
+  background-color: #F44336;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
+
+.container-header {
+  margin-top: -35vh;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
+
+.container {
+  max-width: 1600px;
+  width: calc(100% - 16px);
+  margin: 0 auto;
+}
+
+.container-content {
+  border-radius: 2px;
+  padding: 80px 56px;
+  margin-bottom: 80px;
 }
 
 .content {
@@ -42,10 +95,22 @@ html, body {
   	padding-right: 0;
 }
 
-.mdl-layout__drawer span.mdl-layout-title {
+/*Altera o tamanho do drawer*/
+.mdl-layout__drawer {
+	width: 300px !important;
+	left: -50px !important;
+	top: 64px !important;
+	height: calc(100% - 64px) !important;
+}
+
+.mdl-layout__drawer.is-visible {
+	left: 0px !important;
+}
+
+/*.mdl-layout__drawer span.mdl-layout-title {
   	color: white;
     background: #2C2C2C;
-}
+}*/
 
 .mdl-layout__drawer a.mdl-navigation__link {
   	color: #EEE;
@@ -63,7 +128,10 @@ html, body {
 }
 
 .event-card-wide.mdl-card {
-  	width: 300px;
+	width: 448px;
+	background: #FFF;
+	box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+    border-radius: 2px 2px 6px 6px;
 }
 
 .event-card-wide > .mdl-card__title {
@@ -75,7 +143,7 @@ html, body {
   	color: #fff;
 }
 
-/*.event-card-square.mdl-card {
+.event-card-square.mdl-card {
   	width: 300px;
 }
 
@@ -86,10 +154,10 @@ html, body {
 
 .event-card-square > .mdl-card__menu {
   	color: #fff;
-}*/
+}
 
 .inf-logo-image {
-    max-width: 65px;  
+    max-width: 65px;
 }
 
 .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
@@ -109,13 +177,42 @@ html, body {
     cursor: pointer;
 }
 
-.gm-style-iw {
-    width: 300px !important;
-    top: 13px !important;
-    background: #FFF;
-    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
-    border-radius: 2px 2px 6px 6px;
+.infobox-pointer {
+    width: 108px !important;
+    left: 166px;
+    top: -45px;
+    position: relative;
+    z-index: 1;
 }
+
 #myform {
-    width: 220px;
+    width: 250px;
+}
+
+.formTable {
+    width: 250px;
+}
+
+#add-event-fab {
+	z-index: 1;
+	bottom: 25px;
+	right: 60px;
+	position: fixed;
+}
+
+.red-button {
+	background-color: #F44336 !important;
+}
+
+.mdl-checkbox.is-checked .mdl-checkbox__box-outline {
+	border-color: #F44336 !important;
+}
+
+.mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
+	background-color: #F44336 !important;
+}
+
+.description-text {
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-size: 24px;
 }

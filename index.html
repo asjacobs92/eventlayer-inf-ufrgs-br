@@ -20,18 +20,13 @@
 				<span class="mdl-layout-title">
 			      		<a href=""><img class="inf-logo-image" src="resource/inf.png"></a>EventLayer
 			      	</span>
-				
+
 			      	<!-- Add spacer, to align navigation to the right -->
 			      	<div class="mdl-layout-spacer"></div>
 
-			      	<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
-				        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-				         	<i class="material-icons">search</i>
-				        </label>
-				        <div class="mdl-textfield__expandable-holder">
-				          <input class="mdl-textfield__input" id="search" type="search" onsearch="consultaRapida();"/>
-				        </div>
-			      	</div>
+				<label class="mdl-button mdl-js-button mdl-button--icon" for="search" onclick="toggleFiltros()">
+			         	<i class="material-icons">search</i>
+			        </label>
 
 			        <label class="mdl-button mdl-js-button mdl-button--icon" onclick="toggleList()">
 			         	<i class="material-icons">list</i>
@@ -41,71 +36,87 @@
 
 			<div class="mdl-layout__drawer mdl-color--grey-100">
 					<span class="mdl-layout-title">
-						<img class="inf-logo-image" src="resource/inf.png"> Filtros
+						<!--img class="inf-logo-image" src="resource/inf.png"-->
+						Pesquisa
 					</span>
-					<div class="mdl-grid">
-
-							<form id="myform">
-								Tipo de evento
-								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Palestra">
-								  <input type="checkbox" id="Palestra" class="mdl-checkbox__input">
-								  <span class="mdl-checkbox__label">Palestra</span>
-								</label>
-								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Workshop">
-								  <input type="checkbox" id="Workshop" class="mdl-checkbox__input">
-								  <span class="mdl-checkbox__label">Workshop</span>
-								</label>
-
-								<div class="mdl-textfield mdl-js-textfield">
-									Data mínima
-									<input type="date" id="ts">
-								</div>
-
-								<div class="mdl-textfield mdl-js-textfield">
-									Data máxima
-									<input type="date" id="te">
-								</div>
-
-								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								    <input class="mdl-textfield__input" type="text" id="txt"/>
-								    <label class="mdl-textfield__label" for="txt">Palavras-chave</label>
-								</div>
-
-								<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
-								  <thead>
-								    <tr>
-								      <th class="mdl-data-table__cell--non-numeric">Marcadores</th>
-								    </tr>
-								  </thead>
-								  <tbody>
-								    <tr>
-								      <td class="mdl-data-table__cell--non-numeric">Administração</td>
-								    </tr>
-								    <tr>
-								      <td class="mdl-data-table__cell--non-numeric">Computação</td>
-								    </tr>
-								    <tr>
-								      <td class="mdl-data-table__cell--non-numeric">Geral</td>
-								    </tr>
-								    <tr>
-								      <td class="mdl-data-table__cell--non-numeric">Humanas</td>
-								    </tr>
-								  </tbody>
-								</table>
-
-
-							</form>
-
-		    
-						<div class="mdl-cell mdl-cell--top ">
-							<button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" 
-								onclick="limpa();">Limpar</button>
+					<div class="content-grid mdl-grid" id="myform">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						    <input class="mdl-textfield__input" type="search" onsearch="consulta();" id="txt"/>
+						    <label class="mdl-textfield__label" for="txt">Palavras-chave</label>
 						</div>
-						<div class="mdl-cell mdl-cell--bottom ">
-							<button class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect" 
-								onclick="consulta();">Buscar</button>
-							<!--button class="mdl-button mdl-button--fab mdl-button--colored mdl-js-button mdl-js-ripple-effect" 
-								onclick="consulta();"><i class="material-icons">send</i></button-->
+
+						<div>
+						<table class="mdl-data-table mdl-js-data-table formTable">
+							  <thead>
+							    <tr>
+							      <th class="mdl-data-table__cell--non-numeric">Tipo de evento</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+								<td class="mdl-data-table__cell--non-numeric">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Palestra">
+									  <input type="checkbox" id="Palestra" class="mdl-checkbox__input">
+									  Palestra
+									</label>
+								</td>
+							    </tr>
+							    <tr>
+								<td class="mdl-data-table__cell--non-numeric">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Workshop">
+									  <input type="checkbox" id="Workshop" class="mdl-checkbox__input">
+									  Workshop
+									</label>
+								</td>
+							    </tr>
+							</tbody>
+						</table>
+						</div>
+
+						<div>
+						<table class="mdl-data-table mdl-js-data-table formTable">
+							  <thead>
+							    <tr>
+							      <th class="mdl-data-table__cell--non-numeric">Período</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+								<td class="mdl-data-table__cell--non-numeric">
+									De &nbsp&nbsp
+									<input type="date" id="ts">
+								</td>
+							    </tr>
+							    <tr>
+								<td class="mdl-data-table__cell--non-numeric">
+									Até&nbsp&nbsp
+									<input type="date" id="te">
+								</td>
+							    </tr>
+							</tbody>
+						</table>
+						</div>
+
+						<div>
+						<table class="mdl-data-table mdl-js-data-table formTable">
+						  <thead>
+						    <tr>
+						      <th class="mdl-data-table__cell--non-numeric">Institutos</th>
+						    </tr>
+						  </thead>
+						  <tbody id="tagTableItens">
+							<!-- Preenchido pelo script.js -->
+						  </tbody>
+						</table>
+						</div>
+
+						<div>
+							<button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect"
+								onclick="limpa();">Limpar</button>
+						<!--/div>
+						<div class="mdl-cell"-->
+							<button class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect red-button"
+								onclick="consulta();">Buscar</button>						
 						</div>
 					</div>
 
@@ -114,17 +125,23 @@
 
 		  	<main class="mdl-layout__content content">
 		  		<div id="events-map" class="content"></div>
+				<button id="add-event-fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored red-button">
+				  <i class="material-icons">add</i>
+				</button>
+
+				<div id="event-details">
+					
+				</div>
 
 				<div id="events-list" class="mdl-grid"></div>
 		  	</main>
 	  	</div>
-		
+
 
 		<!-- Placed at the end of the document so the pages load faster -->
-		 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-		  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-		  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-		  <link rel="stylesheet" href="/resources/demos/style.css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<script src="js/jquery-1.11.3.min.js"></script>
 		<script src="js/material.min.js"></script>
 
@@ -133,5 +150,6 @@
 		<!-- Agrupador de marcadores do google maps-->
 		<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/data.json"></script>
 		<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+		<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
   </body>
 </html>

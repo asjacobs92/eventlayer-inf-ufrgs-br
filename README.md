@@ -13,13 +13,13 @@ O projeto está organizado da seguinte maneira:
   <li> eventlayer-inf-ufrgs-br: diretório raiz, onde estão localizados os arquivos html e o README.
   <ul>
       <li> <i>js</i>: diretório contendo arquivos javascript da biblioteca MDL e o script principal do projeto <i>script.js</i>
-      <li> <i>css</i>: diretório contendo arquivos css da biblioteca MDL e o css principal do projeto <i>styles.js</i>
+      <li> <i>css</i>: diretório contendo arquivos css da biblioteca MDL e o css principal do projeto <i>styles.css</i>
       <li> <i>php</i>: diretório contendo scripts php para realizar conexão e consulta ao banco de dados do projeto.
       <li> <i>resource</i>: diretório contendo imagens utilizadas no projeto.
   </ul>
 </ul>
 
-<br>Contato:<br><br>
+<br><b>Contato:</b><br><br>
 André Telles<br>
 <a href="atelles@inf.ufrgs.br"><i>atelles@inf.ufrgs.br</i></a><br>
 Arthur Jacobs<br>
@@ -27,7 +27,7 @@ Arthur Jacobs<br>
 Lourenço Jacobs<br>
 <a href="lsjacobs@inf.ufrgs.br"><i>lsjacobs@inf.ufrgs.br</i></a><br>
 
-Professor responsável:<br><br>
+<b>Professor responsável:</b><br><br>
 Marcelo Pimenta<br>
 <a href="pimenta@inf.ufrgs.br"><i>pimenta@inf.ufrgs.br</i></a>
 

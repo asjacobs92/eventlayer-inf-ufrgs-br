@@ -21,15 +21,15 @@ O projeto está organizado da seguinte maneira:
 
 <br>Contato:<br><br>
 André Telles<br>
-<a href="atelles@inf.ufrgs.br">atelles@inf.ufrgs.br<i><br>
+<a href="atelles@inf.ufrgs.br"><i>atelles@inf.ufrgs.br</i></a><br>
 Arthur Jacobs<br>
-<a href="asjacobs@inf.ufrgs.br">asjacobs@inf.ufrgs.br<i><br>
+<a href="asjacobs@inf.ufrgs.br"><i>asjacobs@inf.ufrgs.br</i></a><br>
 Lourenço Jacobs<br>
-<a href="lsjacobs@inf.ufrgs.br">lsjacobs@inf.ufrgs.br<i><br>
+<a href="lsjacobs@inf.ufrgs.br"><i>lsjacobs@inf.ufrgs.br</i></a><br>
 
 Professor responsável:<br><br>
 Marcelo Pimenta<br>
-<a href="pimenta@inf.ufrgs.br">pimenta@inf.ufrgs.br<i>
+<a href="pimenta@inf.ufrgs.br"><i>pimenta@inf.ufrgs.br</i></a>
 
 
 

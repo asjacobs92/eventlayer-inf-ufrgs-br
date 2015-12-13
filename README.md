@@ -1,4 +1,4 @@
-# inf.ufrgs.br.eventlayer
+# EventLayer
 Repositório para website UFRGS Event Layer, projeto da cadeira de Laboratório de Software do Instituo de Informática.
 
 O Projeto está hospedado no sevidor do Instituto de Informática da UFRGS, na url <b>inf.ufrgs.br/eventlayer</b>.<br><br>

@@ -1,25 +1,24 @@
 # Event Layer
-Repositório para website UFRGS Event Layer, projeto da cadeira de Laboratório de Software do Instituo de Informática.
 
-O Projeto está hospedado no sevidor do Instituto de Informática da UFRGS, na url <b>inf.ufrgs.br/eventlayer</b>.<br><br>
-O servidor pode ser acessado através de um servidor sftp para a url <b>html.inf.ufrgs.br</b> utilizando um login do instituto.
-O projeto está no diretório <b>/home/www/eventlayer/public_html</b>.
+Repository for the website UFRGS Event Layer, a class project from the Software Lab course, at Federal University of Rio Grande do Sul.
 
-O projeto deve ser mantido no servidor para que funcione, devido à conexão com o banco de dados, 
-também mantido no servidor do instituto. Desta forma, apenas programas que rodem no servidor possuem acesso ao banco.<br><br>
+The project is hosted on a server at the Informatic Institute, at <b>inf.ufrgs.br/eventlayer</b>.<br><br>.
+The server may be acessed throught an SFTP client at <b>html.inf.ufrgs.br</b>, using the Institute's credentials.
+In the server, the project is located at <b>/home/www/eventlayer/public_html</b>.
+The project's MySQL database is also stored in the Institute's server.
 
-O projeto está organizado da seguinte maneira:
+The project is organized as follows:
 <ul>
-  <li> eventlayer-inf-ufrgs-br: diretório raiz, onde estão localizados os arquivos html e o README.
+  <li> eventlayer-inf-ufrgs-br: root directory, where html files and README are located.
   <ul>
-      <li> <i>js</i>: diretório contendo arquivos javascript da biblioteca MDL e o script principal do projeto <i>script.js</i>
-      <li> <i>css</i>: diretório contendo arquivos css da biblioteca MDL e o css principal do projeto <i>styles.css</i>
-      <li> <i>php</i>: diretório contendo scripts php para realizar conexão e consulta ao banco de dados do projeto.
-      <li> <i>resource</i>: diretório contendo imagens utilizadas no projeto.
+      <li> <i>js</i>: directory containing the JavasSript files from the MDL lib, and the project's main script <i>script.js</i>
+      <li> <i>css</i>: directory containing the CSS files from the MDL lib, and the project's mais CSS file <i>styles.css</i>
+      <li> <i>php</i>: directory containing the PHP scripts to access the database.
+      <li> <i>resource</i>: Directory containing image files used in the project.
   </ul>
 </ul>
 
-<br><b>Contato:</b><br><br>
+<br><b>Contat:</b><br><br>
 André Telles<br>
 <a href="atelles@inf.ufrgs.br"><i>atelles@inf.ufrgs.br</i></a><br>
 Arthur Jacobs<br>
@@ -27,7 +26,7 @@ Arthur Jacobs<br>
 Lourenço Jacobs<br>
 <a href="lsjacobs@inf.ufrgs.br"><i>lsjacobs@inf.ufrgs.br</i></a><br>
 
-<b>Professor responsável:</b><br><br>
+<b>Professor:</b><br><br>
 Marcelo Pimenta<br>
 <a href="pimenta@inf.ufrgs.br"><i>pimenta@inf.ufrgs.br</i></a>
 

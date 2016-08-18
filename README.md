@@ -2,10 +2,10 @@
 
 Repository for the website UFRGS Event Layer, a class project from the Software Lab course, at Federal University of Rio Grande do Sul.
 
-The project is hosted on a server at the Informatic Institute, at <b>inf.ufrgs.br/eventlayer</b>.<br><br>.
-The server may be acessed throught an SFTP client at <b>html.inf.ufrgs.br</b>, using the Institute's credentials.
-In the server, the project is located at <b>/home/www/eventlayer/public_html</b>.
-The project's MySQL database is also stored in the Institute's server.
+The project is hosted on a server at the Informatic Institute, at <b>inf.ufrgs.br/eventlayer</b>.<br>
+The server may be acessed throught an SFTP client at <b>html.inf.ufrgs.br</b>, using the Institute's credentials.<br>
+In the server, the project is located at <b>/home/www/eventlayer/public_html</b>.<br>
+The project's MySQL database is also stored in the Institute's server.<br>
 
 The project is organized as follows:
 <ul>
